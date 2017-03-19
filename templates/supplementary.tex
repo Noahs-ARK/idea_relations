@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage{times}
+\usepackage{latexsym}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{blindtext}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{multirow}
+
+\newcommand{\addFigure}[2]{\includegraphics[width=#1]{../plots/#2}}
+\newcommand{\para}[1]{\noindent{\bf #1}}
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+\newcommand{\equationref}[1]{Eq. \ref{#1}}
+\newcommand{\secref}[1]{\S \ref{#1}}
+\newcommand{\tableref}[1]{Table \ref{#1}}
+\newcommand{\ideas}{ideas\xspace}
+\newcommand{\Ideas}{Ideas\xspace}
+\newcommand{\idea}{idea\xspace}
+\newcommand{\Idea}{Idea\xspace}
+\newcommand{\cooccurrence}{cooccurrence\xspace}
+\newcommand{\cooccurrences}{cooccurrences\xspace}
+\newcommand{\cooccur}{cooccur\xspace}
+\newcommand{\cooccurs}{cooccurs\xspace}
+\newcommand{\Cooccurrence}{Cooccurrence\xspace}
+\newcommand{\Cooccurrences}{Cooccurrences\xspace}
+\newcommand{\correlation}{prevalence correlation\xspace}
+\newcommand{\Correlation}{Prevalence correlation\xspace}
+\newcommand{\frequency}{prevalence\xspace}
+\newcommand{\pmi}{$\widehat{\operatorname{PMI}}$\xspace}
+\newcommand{\freqcorr}{$\hat{r}$\xspace}
+\newcommand{\kwords}{keywords\xspace}
+\newcommand{\kword}{keyword\xspace}
+\newcommand{\Kwords}{Keywords\xspace}
+\newcommand{\friends}{friendship\xspace}
+\newcommand{\romance}{tryst\xspace}
+\newcommand{\armsrace}{arms-race\xspace}
+\newcommand{\headtohead}{head-to-head\xspace}
+\newcommand{\Friends}{Friendship\xspace}
+\newcommand{\Romance}{Tryst\xspace}
+\newcommand{\Armsrace}{Arms-race\xspace}
+\newcommand{\Headtohead}{Head-to-head\xspace}
+
+\newcommand{\ideaname}[1]{{\small\sf #1}\xspace}
+\newcommand{\ideapair}[2]{(\ideaname{#1}, \ideaname{#2})}
+\definecolor{friendscolor}{RGB}{19, 126, 109}
+\definecolor{armsracecolor}{RGB}{68, 142, 228}
+\definecolor{headtoheadcolor}{RGB}{152, 0, 2}
+\definecolor{romancecolor}{RGB}{207, 98, 117}
+\newcommand{\formalideas}{\mathcal{I}}
+
+\title{Idea relations}
+
+\author{}
+\begin{document}
+    \maketitle
+    \input{eda.tex}
+\end{document}
+

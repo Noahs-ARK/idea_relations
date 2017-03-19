@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
+import utils
+
+LEMMATIZER = WordNetLemmatizer()
+
+def tokenize(text, filter_stopwords=False, lowercase=True):
+    words = word_tokenize(text)
+    if filter_stopwords:
+        stopwords = set(stopwords.words('english'))
+        words = [w for w in words if w not in stopwords]
+    return words
+
+
+def lemmatize(text, filter_stopwords=False, lowercase=True):
+    lemmas = [LEMMATIZER.lemmatize(w)
+              for w in tokenize(text, lowercase=lowercase,
+                                filter_stopwords=filter_stopwords)]
+    lemmas = [w for w in lemmas if len(w) > 2]
+    return lemmas
+
+
+def preprocess_input(input_file, output_file, func=tokenize):
+    data = []
+    for d in utils.read_json_list(input_file):
+        d["text"] = " ".join(func(d["text"]))
+        data.append(d)
+    utils.write_json_list(output_file, data)
+

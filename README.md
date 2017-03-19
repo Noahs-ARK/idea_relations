@@ -1,12 +1,14 @@
-# idea_relations
-A framework to identify relations between ideas in temporal text corpora.
+# Relations between ideas
+
+This project provides a framework to identify relations between ideas in temporal text corpora.
+(copy some intro content here)
 
 ### Main idea
 The main idea of this framework is to combine cooccurrence within documents and prevalence correlation over time.
 
 Refer to this writeup for our initial exploration using this framework on news issues and research papers
 
-### Package usage
+### Usage
 
 ```
 python main.py --input_file [data.jsonlist] --output_dir --topics/--keywords

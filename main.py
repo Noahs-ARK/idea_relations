@@ -1,0 +1,130 @@
+# -*- coding: utf-8 -*-
+
+#TODO: add license description
+
+import os
+import sys
+import functools
+import preprocessing
+import word_count as wc
+import mallet_topics as mt
+import fighting_lexicon as fl
+import idea_relation as il
+import tex_output as to
+import argparse
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--option", type=str, choices=["topics", "keywords"],
+                    help=(
+                        "choose using topics or keywords to represent ideas,"
+                        " mallet_bin_dir is required if topic is chosen,"
+                        " background_file is required if keywords is chosen."
+                    ),
+                    default="topics")
+parser.add_argument("--input_file",
+                    help=("input file, each line is a json object "
+                          "with fulldate and text"),
+                    type=str)
+parser.add_argument("--data_output_dir",
+                    help=("output directory for intermedia data"),
+                    type=str)
+parser.add_argument("--final_output_dir",
+                    help=("output directory for final results"),
+                    type=str)
+parser.add_argument("--mallet_bin_dir",
+                    help=("directory with Mallet binaries"),
+                    type=str)
+parser.add_argument("--background_file",
+                    help=("background file to learn important keywords"),
+                    type=str)
+parser.add_argument("--num_ideas",
+                    help=("number of ideas, i.e., "
+                          "number of topics or keywords"),
+                    type=int,
+                    default=50)
+parser.add_argument("--tokenize",
+                    help=("whether to tokenize"),
+                    action="store_true")
+parser.add_argument("--lemmatize",
+                    help=("whether to lemmatize"),
+                    action="store_true")
+parser.add_argument("--nostopwords",
+                    help=("whether to filter stopwords"),
+                    action="store_true")
+args = parser.parse_args()
+
+def main():
+    input_file = args.input_file
+    data_output_dir = args.data_output_dir
+    final_output_dir = args.final_output_dir
+    # Support some standard preprocessing
+    if args.tokenize:
+        # tokenize input_file to token_file
+        logging.info("tokenizing data")
+        token_file = "%s/tokens.jsonlist.gz" % data_output_dir
+        func = functools.partial(preprocessing.tokenize,
+                                 filter_stopwords=args.nostopwords)
+        preprocessing.preprocess_input(input_file, token_file)
+        input_file = token_file
+    if args.lemmatize:
+        # lemmatize input_file to lemma_file
+        logging.info("lemmatizing data")
+        lemma_file = "%s/lemmas.jsonlist.gz" % data_output_dir
+        func = functools.partial(preprocessing.lemmatize,
+                                 filter_stopwords=args.nostopwords)
+        preprocessing.preprocess_input(input_file, lemma_file)
+        input_file = lemma_file
+
+    # generate topics or lexicons
+    option = args.option
+    num_ideas = args.num_ideas
+    if option == "topics":
+        logging.info("using topics to represent ideas")
+        prefix = "topics"
+        # generate mallet topics
+        wc.get_mallet_input_from_words(input_file, data_output_dir)
+        if not mt.check_mallet_directory(data_output_dir):
+            # run mallet to prepare topics inputs
+            # users can also generate mallet-style topic inputs inputs
+            logging.info("running mallet to get topics")
+            os.system("./mallet.sh %s %s %d" % (args.mallet_bin_dir,
+                                               data_output_dir,
+                                               num_ideas))
+        # load mallet outputs
+        cooccur_func = functools.partial(mt.generate_cooccurrence_from_int_set,
+                                         num_ideas=num_ideas)
+        articles, vocab, idea_names = mt.load_articles(input_file,
+                                                       data_output_dir)
+    elif option == "keywords":
+        logging.info("using keywords to represent ideas")
+        # idenfity keyword ideas using fighting lexicon
+        bigram_file = "%s/bigram_phrases.txt" % data_dir
+        lexicon_file = "%s/fighting_lexicon.txt" % data_dir
+        other_files = [args.background_file]
+        fl.get_top_distinguishing(input_file, bigram_file, other_files, lexicon_file)
+        # load keywords
+        bigram_dict = wc.load_bigrams(bigram_file)
+        articles, word_set, topic_map = fl.load_word_articles(
+            words_file,
+            lexicon_file,
+            functools.partial(wc.get_mixed_tokens, bigram_dict=bigram_dict),
+            vocab_size=num_ideas)
+    else:
+        logging.error("unsupported idea representations")
+
+    # compute strength between pairs and generate outputs
+    il.generate_all_outputs(articles, num_ideas, idea_names, prefix,
+                           final_output_dir, cooccur_func)
+
+    # generate pdf
+    # tex_file = "%s/%s_main.tex" % (final_output_dir, topics)
+    # to.write_tex_file(tex_file)
+    # os.system("./mklatex.sh %s" % tex_file)
+
+
+if __name__ == "__main__":
+    main()
+
