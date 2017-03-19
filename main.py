@@ -6,11 +6,9 @@ import os
 import sys
 import functools
 import preprocessing
-import word_count as wc
 import mallet_topics as mt
 import fighting_lexicon as fl
-import idea_relation as il
-import tex_output as to
+import idea_relations as il
 import argparse
 import logging
 
@@ -81,11 +79,13 @@ def main():
     # generate topics or lexicons
     option = args.option
     num_ideas = args.num_ideas
+    cooccur_func = functools.partial(il.generate_cooccurrence_from_int_set,
+                                     num_ideas=num_ideas)
     if option == "topics":
         logging.info("using topics to represent ideas")
         prefix = "topics"
         # generate mallet topics
-        wc.get_mallet_input_from_words(input_file, data_output_dir)
+        mt.get_mallet_input_from_words(input_file, data_output_dir)
         if not mt.check_mallet_directory(data_output_dir):
             # run mallet to prepare topics inputs
             # users can also generate mallet-style topic inputs inputs
@@ -94,23 +94,18 @@ def main():
                                                data_output_dir,
                                                num_ideas))
         # load mallet outputs
-        cooccur_func = functools.partial(mt.generate_cooccurrence_from_int_set,
-                                         num_ideas=num_ideas)
         articles, vocab, idea_names = mt.load_articles(input_file,
                                                        data_output_dir)
     elif option == "keywords":
         logging.info("using keywords to represent ideas")
         # idenfity keyword ideas using fighting lexicon
-        bigram_file = "%s/bigram_phrases.txt" % data_dir
         lexicon_file = "%s/fighting_lexicon.txt" % data_dir
         other_files = [args.background_file]
-        fl.get_top_distinguishing(input_file, bigram_file, other_files, lexicon_file)
+        fl.get_top_distinguishing(input_file, other_files, lexicon_file)
         # load keywords
-        bigram_dict = wc.load_bigrams(bigram_file)
         articles, word_set, topic_map = fl.load_word_articles(
             words_file,
             lexicon_file,
-            functools.partial(wc.get_mixed_tokens, bigram_dict=bigram_dict),
             vocab_size=num_ideas)
     else:
         logging.error("unsupported idea representations")
@@ -119,10 +114,6 @@ def main():
     il.generate_all_outputs(articles, num_ideas, idea_names, prefix,
                            final_output_dir, cooccur_func)
 
-    # generate pdf
-    # tex_file = "%s/%s_main.tex" % (final_output_dir, topics)
-    # to.write_tex_file(tex_file)
-    # os.system("./mklatex.sh %s" % tex_file)
 
 
 if __name__ == "__main__":

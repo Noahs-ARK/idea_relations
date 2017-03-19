@@ -3,7 +3,11 @@
 import os
 import gzip
 import io
+import collections
 import numpy as np
+
+
+IdeaArticle = collections.namedtuple("Article", ["fulldate", "ideas"])
         
 def get_date_key(date, group_by="month"):
     if group_by == "month":

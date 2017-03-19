@@ -5,11 +5,43 @@ import gzip
 import itertools
 import json
 import numpy as np
+import word_count as wc
 import utils
 
 
-TopicArticle = collections.namedtuple("Article", ["fulldate", "frames"])
-START_LOC = 11
+def convert_word_count_mallet(word_dict, input_file, output_file,
+                              words_func=None):
+    doc_id = 0
+    with gzip.open(input_file) as fin, open(output_file, "w") as fout:
+        for line in fin:
+            doc_id += 1
+            data = json.loads(line)
+            words = collections.Counter(words_func(data["words"]))
+            words = [(word_dict[w], words[w])
+                     for w in words if w in word_dict]
+            words.sort()
+            word_cnts = [" ".join([str(wid)] * cnt) for (wid, cnt) in words]
+            fout.write("%s %s %s\n" % (doc_id, data["date"], " ".join(word_cnts)))
+
+
+def get_mallet_input_from_words(input_file, data_dir, vocab_size=10000):
+    bigram_file = "%s/bigram_phrases.txt" % data_dir
+    if not os.path.exists(bigram_file):
+        wc.find_bigrams(input_file, bigram_file)
+    bigram_dict = wc.load_bigrams(bigram_file)
+    word_cnts = wc.get_word_count(input_file, bigram_dict=bigram_dict,
+                                  words_func=wc.get_mixed_tokens)
+    vocab_dict = wc.get_word_dict(word_cnts,
+                                  top=vocab_size,
+                                  filter_regex="\w\w+")
+    utils.write_word_dict(vocab_dict, word_cnts,
+                          "%s/data.word_id.dict" % data_dir)
+    convert_word_count_mallet(vocab_dict, input_file,
+                              "%s/data.input" % data_dir,
+                              words_func=functools.partial(
+                                  wc.get_mixed_tokens,
+                                  bigram_dict=bigram_dict))
+
 
 def load_topic_words(vocab, input_file, top=10):
     """Get the top 10 words for each topic"""
@@ -23,34 +55,20 @@ def load_topic_words(vocab, input_file, top=10):
     return topic_map
 
 
-def load_doc_topics(word_count_file, doc_topic_file, threshold=0.01):
-    """load something similar to frame_count.py"""
+def load_doc_topics(input_file, doc_topic_file, threshold=0.01):
+    """Load topics in each document"""
     articles = []
-    with gzip.open(word_count_file) as wfin, open(doc_topic_file) as tfin:
-        while True:
-            word_line = wfin.readline()
+    with open(doc_topic_file) as tfin:
+        for data in utils.read_json_list(input_file):
             topic_line = tfin.readline()
-            if not word_line or not topic_line:
+            if not topic_line:
                 break
-            data = json.loads(word_line)
-            frames = topic_line.strip().split()[2:]
-            frames = set([i for (i, v) in enumerate(frames) 
-                if float(v) > threshold])
-            articles.append(TopicArticle(fulldate=int(data["date"]),
-                frames=frames))
+            ideas = topic_line.strip().split()[2:]
+            ideas = set([i for (i, v) in enumerate(ideas) 
+                         if float(v) > threshold])
+            articles.append(utils.IdeaArticle(fulldate=int(data["date"]),
+                                         ideas=ideas))
     return articles
-
-
-def generate_cooccurrence_from_int_set(articles, total_frames=100):
-    matrix = np.zeros((total_frames, total_frames))
-    for article in articles:
-        frames = article.frames
-        for frame in frames:
-            matrix[frame, frame] += 1
-        for (i, j) in itertools.combinations(frames, 2):
-            matrix[i, j] += 1
-            matrix[j, i] += 1
-    return matrix
 
 
 def load_articles(input_file, topic_dir):

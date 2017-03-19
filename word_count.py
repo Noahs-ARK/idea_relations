@@ -103,34 +103,6 @@ def get_word_dict(word_count, top=10000, filter_regex=None):
     return {v[1]: i for i, v in enumerate(words)}
 
 
-def convert_word_count_libsvm(word_dict, input_file, output_file):
-    doc_id = 0
-    with gzip.open(input_file) as fin, open(output_file, "w") as fout:
-        for line in fin:
-            doc_id += 1
-            data = json.loads(line)
-            words = data["word_count"].keys()
-            words = [(word_dict[w], data["word_count"][w])
-                     for w in words if w in word_dict]
-            words.sort()
-            word_cnts = ["%d:%d" % (wid, cnt) for (wid, cnt) in words]
-            fout.write("%s\t%s\n" % (doc_id, " ".join(word_cnts)))
-
-
-def convert_word_count_mallet(word_dict, input_file, output_file, words_func=None):
-    doc_id = 0
-    with gzip.open(input_file) as fin, open(output_file, "w") as fout:
-        for line in fin:
-            doc_id += 1
-            data = json.loads(line)
-            words = collections.Counter(words_func(data["words"]))
-            words = [(word_dict[w], words[w])
-                     for w in words if w in word_dict]
-            words.sort()
-            word_cnts = [" ".join([str(wid)] * cnt) for (wid, cnt) in words]
-            fout.write("%s %s %s\n" % (doc_id, data["date"], " ".join(word_cnts)))
-
-
 def get_time_series(result, word_list, normalize=False):
     keys = result.keys()
     keys.sort()
@@ -200,28 +172,5 @@ def get_pairwise_pmi(result, words, add_one=1.0):
                     add_one=add_one)
     return pmi
 
-
-def get_mallet_input_from_words(words_file, data_dir, vocab_size=10000):
-    bigram_file = "%s/bigram_phrases.txt" % data_dir
-    find_bigrams(words_file, bigram_file)
-    bigram_dict = load_bigrams(bigram_file)
-    word_cnts = get_word_count(words_file, bigram_dict=bigram_dict,
-            words_func=get_mixed_tokens)
-    vocab_dict = get_word_dict(word_cnts, top=vocab_size, filter_regex="\w\w+")
-    utils.write_word_dict(vocab_dict, word_cnts,
-            "%s/data.word_id.dict" % data_dir)
-    convert_word_count_mallet(vocab_dict, words_file,
-            "%s/data.input" % data_dir,
-            words_func=functools.partial(get_mixed_tokens, bigram_dict=bigram_dict))
-
-
-def unigrams_to_data(words_file, data_dir, vocab_size=10000):
-    word_cnts = get_word_count(words_file, ngrams=1, words_func=get_ngram_list)
-    vocab_dict = get_word_dict(word_cnts, top=vocab_size, filter_regex="\w\w+")
-    utils.write_word_dict(vocab_dict, word_cnts,
-                          "%s/data.word_id.dict" % data_dir)
-    convert_word_count_mallet(vocab_dict, words_file,
-            "%s/data.input" % data_dir,
-            words_func=functools.partial(get_ngram_list, ngrams=1, bigram_dict=None))
 
 

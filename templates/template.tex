@@ -1,0 +1,168 @@
+\documentclass[11pt]{{article}}
+\usepackage{{times}}
+\usepackage{{latexsym}}
+
+\usepackage{{amsmath}}
+\usepackage{{booktabs}}
+\usepackage{{array}}
+\usepackage{{multirow}}
+\usepackage{{graphicx}}
+\usepackage{{color}}
+\usepackage{{blindtext}}
+\usepackage{{subcaption}}
+\usepackage{{enumitem}}
+\usepackage{{multirow}}
+
+\newcommand{{\addFigure}}[2]{{\includegraphics[width=#1]{{../plots/#2}}}}
+\newcommand{{\para}}[1]{{\noindent{{\bf #1}}}}
+\newcommand{{\figref}}[1]{{Fig. \ref{{#1}}}}
+\newcommand{{\equationref}}[1]{{Eq. \ref{{#1}}}}
+\newcommand{{\secref}}[1]{{\S \ref{{#1}}}}
+\newcommand{{\tableref}}[1]{{Table \ref{{#1}}}}
+\newcommand{{\ideas}}{{ideas\xspace}}
+\newcommand{{\Ideas}}{{Ideas\xspace}}
+\newcommand{{\idea}}{{idea\xspace}}
+\newcommand{{\Idea}}{{Idea\xspace}}
+\newcommand{{\cooccurrence}}{{cooccurrence\xspace}}
+\newcommand{{\cooccurrences}}{{cooccurrences\xspace}}
+\newcommand{{\cooccur}}{{cooccur\xspace}}
+\newcommand{{\cooccurs}}{{cooccurs\xspace}}
+\newcommand{{\Cooccurrence}}{{Cooccurrence\xspace}}
+\newcommand{{\Cooccurrences}}{{Cooccurrences\xspace}}
+\newcommand{{\correlation}}{{prevalence correlation\xspace}}
+\newcommand{{\Correlation}}{{Prevalence correlation\xspace}}
+\newcommand{{\frequency}}{{prevalence\xspace}}
+\newcommand{{\pmi}}{{$\widehat{{\operatorname{{PMI}}}}$\xspace}}
+\newcommand{{\freqcorr}}{{$\hat{{r}}$\xspace}}
+\newcommand{{\kwords}}{{keywords\xspace}}
+\newcommand{{\kword}}{{keyword\xspace}}
+\newcommand{{\Kwords}}{{Keywords\xspace}}
+\newcommand{{\friends}}{{friendship\xspace}}
+\newcommand{{\tryst}}{{tryst\xspace}}
+\newcommand{{\armsrace}}{{arms-race\xspace}}
+\newcommand{{\headtohead}}{{head-to-head\xspace}}
+\newcommand{{\Friends}}{{Friendship\xspace}}
+\newcommand{{\Tryst}}{{Tryst\xspace}}
+\newcommand{{\Armsrace}}{{Arms-race\xspace}}
+\newcommand{{\Headtohead}}{{Head-to-head\xspace}}
+
+\newcommand{{\ideaname}}[1]{{{{\small\sf #1}}\xspace}}
+\newcommand{{\ideapair}}[2]{{(\ideaname{{#1}}, \ideaname{{#2}})}}
+\definecolor{{friendscolor}}{{RGB}}{{19, 126, 109}}
+\definecolor{{armsracecolor}}{{RGB}}{{68, 142, 228}}
+\definecolor{{headtoheadcolor}}{{RGB}}{{152, 0, 2}}
+\definecolor{{trystcolor}}{{RGB}}{{207, 98, 117}}
+\newcommand{{\formalideas}}{{\mathcal{{I}}}}
+
+\title{{Idea relations}}
+
+\author{{}}
+\begin{{document}}
+    \maketitle
+    \section{{Joint distributions}}
+
+    \begin{{figure*}}
+        \centering
+        \addFigure{{\textwidth}}{joint_file}
+        \caption{{Joint distribution between PMI and prevalence correlation.}}
+        \label{{fig:joint}}
+    \end{{figure*}}
+
+
+    \section{Top relation plots}
+    \begin{{figure*}}
+        \centering
+        {{\large \textcolor{{friendscolor}}{{\Friends}}}}\\
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{friends_1}
+            \caption{{\Friends (\#1).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{friends_2}
+            \caption{{\Friends (\#2).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{friends_3}
+            \caption{{\Friends (\#3).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{friends_4}
+            \caption{{\Friends (\#4).}}
+        \end{{subfigure}}
+        {{\large \textcolor{{headtoheadcolor}}{{\Headtohead}}}}\\
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{headtohead_1}
+            \caption{{\Headtohead (\#1).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{headtohead_2}
+            \caption{{\Headtohead (\#2).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{headtohead_3}
+            \caption{{\Headtohead (\#3).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{headtohead_4}
+            \caption{{\Headtohead (\#4).}}
+        \end{{subfigure}}
+        {{\large \textcolor{{armsracecolor}}{{\Armsrace}}}}\\
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{armsrace_1}
+            \caption{{\Armsrace (\#1).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{armsrace_2}
+            \caption{{\Armsrace (\#2).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{armsrace_3}
+            \caption{{\Armsrace (\#3).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{armsrace_4}
+            \caption{{\Armsrace (\#4).}}
+        \end{{subfigure}}
+        {{\large \textcolor{{trystcolor}}{{\Tryst}}}}\\
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{tryst_1}
+            \caption{{\Tryst (\#1).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{tryst_2}
+            \caption{{\Tryst (\#2).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{tryst_3}
+            \caption{{\Tryst (\#3).}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}[t]{{0.22\textwidth}}
+            \addFigure{{\textwidth}}{tryst_4}
+            \caption{{\Tryst (\#4).}}
+        \end{{subfigure}}
+        \caption{{Top four figures in each category, more careful investigation is required to interpret these results. Also explore further down the list (e.g., top 50) to get a better understanding.}}
+        \label{{fig:top}}
+    \end{{figure*}}
+
+    \section{Relation tables}
+    \begin{{table*}}[t]
+        \centering
+        \caption{{Relation between ideas. This table shows top five pairs. In the table/ directory, there is another file with top 50 pairs, which is worth further investigation.}}
+        \label{{tab:top}}
+        \scriptsize
+        \input{table_file}
+    \end{{table*}}
+\end{{document}}
+

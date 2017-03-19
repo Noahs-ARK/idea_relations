@@ -11,7 +11,8 @@ Refer to this writeup for our initial exploration using this framework on news i
 ### Usage
 
 ```
-python main.py --input_file [data.jsonlist] --output_dir --topics/--keywords
+python main.py --input_file [data.jsonlist] --data_output_dir [intermediate data directory] \
+           --final_output_dir [final output directory] --option [topics or]
 ```
 
 In the output directory, there will two sub directories, figure/ and table/ and also a main.tex file that can be compiled to generate an example report.
