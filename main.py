@@ -58,6 +58,7 @@ parser.add_argument("--nostopwords",
                     action="store_true")
 args = parser.parse_args()
 
+
 def main():
     input_file = os.path.abspath(args.input_file)
     data_output_dir = os.path.abspath(args.data_output_dir)
@@ -100,6 +101,7 @@ def main():
         # load mallet outputs
         articles, vocab, idea_names = mt.load_articles(input_file,
                                                        data_output_dir)
+        table_top = 5
     elif option == "keywords":
         logging.info("using keywords to represent ideas")
         prefix = "%s_keywords" % prefix
@@ -114,12 +116,13 @@ def main():
             lexicon_file,
             data_output_dir,
             vocab_size=num_ideas)
+        table_top = 10
     else:
         logging.error("unsupported idea representations")
 
     # compute strength between pairs and generate outputs
     il.generate_all_outputs(articles, num_ideas, idea_names, prefix,
-                           final_output_dir, cooccur_func)
+                           final_output_dir, cooccur_func, table_top=table_top)
 
 
 if __name__ == "__main__":

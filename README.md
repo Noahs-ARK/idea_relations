@@ -21,11 +21,15 @@ python main.py [--option {topics,keywords}] [--input_file INPUT_FILE] \
 ```
 
 `input_file` is a data file, where each line corresponds to a document and is a json object with two fields (`text` for the content; `date` for the timestamp, e.g., 20000101).
+
 In the `final_output_dir`, there will two sub directories, figure/ and table/ and also a tex file that is compiled to generate a report pdf file.
+
 If `topics` is used to represent ideas, [Mallet](http://mallet.cs.umass.edu/) is required to generate topics for each document (`mallet_bin_dir` is required).
 Alternatively, it works as long as there are mallet style topic files in `data_outpu_dir`.
+
 If `keywords` is used to represent ideas, `background_file` is required to learn `num_ideas` as representations.
-`tokenize`, `lemmatize` and `nostopwords` are preprocessing options that we support.
+
+`tokenize`, `lemmatize` and `nostopwords` are preprocessing options that we currently support.
 
 All packages in requirements.txt are necessary. 
 Run `pip install -r requirements.txt` to install them.

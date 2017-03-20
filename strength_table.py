@@ -14,7 +14,7 @@ TopicPair = collections.namedtuple("TopicPair",
 
 def write_type_rows(fout, data, top=5):
     fout.write("combined & pmi & correlation & first & second\\\\\n")
-    types = ["friends", "tryst", "head-to-head", "arms-race"]
+    types = ["friends", "head-to-head", "arms-race", "tryst"]
     for t in types:
         fout.write("\\midrule\n")
         fout.write("\\multicolumn{5}{c}{%s}\\\\\n" % t)

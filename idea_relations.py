@@ -306,7 +306,7 @@ def plot_average_top_strength(strength_file, output_dir, top=25):
 
 
 def generate_all_outputs(articles, num_ideas, idea_names, prefix,
-                         output_dir, cooccur_func):
+                         output_dir, cooccur_func, table_top=5):
     figure_dir = "%s/figure" % output_dir
     table_dir = "%s/table" % output_dir
     if not os.path.exists(figure_dir) or not os.path.exists(table_dir):
@@ -337,11 +337,11 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
     # generate tables
     st.get_top_relationship(strength_file,
                             "%s/%s_top_five.tex" % (table_dir, prefix),
-                            top=5)
+                            top=table_top)
     info["table_file"] = "%s/%s_top_five.tex" % (table_dir, prefix)
     st.get_top_relationship(strength_file,
                             "%s/%s_top_50.tex" % (table_dir, prefix),
-                            top=5)
+                            top=50)
     # generate pdf
     for k in info.keys():
         info[k] = info[k][len(output_dir) + 1:]
