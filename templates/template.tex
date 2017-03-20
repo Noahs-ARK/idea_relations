@@ -13,7 +13,7 @@
 \usepackage{{enumitem}}
 \usepackage{{multirow}}
 
-\newcommand{{\addFigure}}[2]{{\includegraphics[width=#1]{{../plots/#2}}}}
+\newcommand{{\addFigure}}[2]{{\includegraphics[width=#1]{{#2}}}}
 \newcommand{{\para}}[1]{{\noindent{{\bf #1}}}}
 \newcommand{{\figref}}[1]{{Fig. \ref{{#1}}}}
 \newcommand{{\equationref}}[1]{{Eq. \ref{{#1}}}}
@@ -59,18 +59,29 @@
 \author{{}}
 \begin{{document}}
     \maketitle
-    \section{{Joint distributions}}
+    \section{{Overall distributions}}
 
-    \begin{{figure*}}
+    % \figref{{fig:joint}} shows the joint distributions between PMI and prevalence correlation.
+    % \figref{{fig:average}} shows the average strength of the top 25 pairs in each category.
+    \begin{{figure*}}[htb!]
         \centering
-        \addFigure{{\textwidth}}{joint_file}
-        \caption{{Joint distribution between PMI and prevalence correlation.}}
-        \label{{fig:joint}}
+        \begin{{subfigure}}{{0.45\textwidth}}
+            \addFigure{{\textwidth}}{joint_file}
+            \caption{{Joint distribution between PMI and prevalence correlation.}}
+            \label{{fig:joint}}
+        \end{{subfigure}}
+        \hfill
+        \begin{{subfigure}}{{0.45\textwidth}}
+            \addFigure{{\textwidth}}{average_file}
+            \caption{{Strength of the top 25 pairs in each category.}}
+            \label{{fig:average}}
+        \end{{subfigure}}
     \end{{figure*}}
+    
+    
 
-
-    \section{Top relation plots}
-    \begin{{figure*}}
+    \section{{Top relation plots}}
+    \begin{{figure*}}[htb!]
         \centering
         {{\large \textcolor{{friendscolor}}{{\Friends}}}}\\
         \begin{{subfigure}}[t]{{0.22\textwidth}}
@@ -91,7 +102,7 @@
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{friends_4}
             \caption{{\Friends (\#4).}}
-        \end{{subfigure}}
+        \end{{subfigure}}\\
         {{\large \textcolor{{headtoheadcolor}}{{\Headtohead}}}}\\
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{headtohead_1}
@@ -111,7 +122,7 @@
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{headtohead_4}
             \caption{{\Headtohead (\#4).}}
-        \end{{subfigure}}
+        \end{{subfigure}}\\
         {{\large \textcolor{{armsracecolor}}{{\Armsrace}}}}\\
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{armsrace_1}
@@ -131,7 +142,7 @@
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{armsrace_4}
             \caption{{\Armsrace (\#4).}}
-        \end{{subfigure}}
+        \end{{subfigure}}\\
         {{\large \textcolor{{trystcolor}}{{\Tryst}}}}\\
         \begin{{subfigure}}[t]{{0.22\textwidth}}
             \addFigure{{\textwidth}}{tryst_1}
@@ -155,9 +166,10 @@
         \caption{{Top four figures in each category, more careful investigation is required to interpret these results. Also explore further down the list (e.g., top 50) to get a better understanding.}}
         \label{{fig:top}}
     \end{{figure*}}
+    \clearpage
 
-    \section{Relation tables}
-    \begin{{table*}}[t]
+    \section{{Relation tables}}
+    \begin{{table*}}[htb!]
         \centering
         \caption{{Relation between ideas. This table shows top five pairs. In the table/ directory, there is another file with top 50 pairs, which is worth further investigation.}}
         \label{{tab:top}}

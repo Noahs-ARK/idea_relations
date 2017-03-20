@@ -2,6 +2,7 @@
 
 import os
 import gzip
+import json
 import io
 import collections
 import numpy as np
@@ -106,8 +107,8 @@ def read_json_list(input_file):
 
 
 def write_json_list(output_file, data):
-    with gzip.open(output_file, "w") if input_file.endswith(".gz") \
-            else open(input_file, "w") as fin:
+    with gzip.open(output_file, "w") if output_file.endswith(".gz") \
+            else open(output_file, "w") as fout:
         for d in data:
             fout.write("%s\n" % json.dumps(d))
 

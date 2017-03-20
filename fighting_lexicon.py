@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import gzip
+import os
 import json
 import math
 import collections
-import itertools
+import functools
 import numpy as np
 import word_count as wc
 import utils
@@ -50,7 +50,7 @@ def log_odds_normalized_diff(first, second, alphas):
     return word_score
 
 
-def get_top_distinguishing(input_file, other_file_list,
+def get_top_distinguishing(input_file, other_file_list, data_dir,
                            output_file, vocab_size=100):
     bigram_file = "%s/bigram_phrases.txt" % data_dir
     if not os.path.exists(bigram_file):
@@ -72,7 +72,7 @@ def get_top_distinguishing(input_file, other_file_list,
     utils.write_word_dict(vocab_dict, word_cnts, output_file)
 
 
-def load_word_articles(input_file, vocab_file, vocab_size=100):
+def load_word_articles(input_file, vocab_file, data_dir, vocab_size=100):
     articles = []
     word_map = utils.read_word_dict(vocab_file, vocab_size=vocab_size)
     word_set = utils.get_reverse_dict(word_map)

@@ -4,6 +4,7 @@ import io
 import os
 import collections
 import json
+import itertools
 import numpy as np
 import scipy.stats as ss
 try:
@@ -11,10 +12,10 @@ try:
     unimodality_test = True
 except:
     unimodality_test = False
-import seaborn as sns
 import plot_functions as pf
+import strength_table as st
 import tex_output as to
-import util
+import utils
 
 COLOR_DICT = {
     "friends": "blue green",
@@ -36,14 +37,15 @@ def generate_cooccurrence_from_int_set(articles, num_ideas=100):
     return matrix
 
 
-def get_pmi(matrix, frame_count, total, total_frames=TOTAL_FRAMES,
-        add_one=1.0):
+def get_pmi(matrix, idea_count, total,
+            num_ideas=50,
+            add_one=1.0):
     result = matrix.copy()
-    for i in range(total_frames):
-        for j in range(i + 1, total_frames):
-            score = util.get_log_pmi(matrix[i, j],
-                    frame_count[i], frame_count[j], total,
-                    add_one=add_one)
+    for i in range(num_ideas):
+        for j in range(i + 1, num_ideas):
+            score = utils.get_log_pmi(matrix[i, j],
+                                      idea_count[i], idea_count[j], total,
+                                      add_one=add_one)
             if np.isnan(score):
                 score = 0
             result[i, j] = score
@@ -51,7 +53,7 @@ def get_pmi(matrix, frame_count, total, total_frames=TOTAL_FRAMES,
     return result
 
 
-def get_count_cooccur(articles, func=generate_cooccurence):
+def get_count_cooccur(articles, func=generate_cooccurrence_from_int_set):
     cooccur = func(articles)
     count = np.diag(cooccur).copy()
     np.fill_diagonal(cooccur, 0)
@@ -63,7 +65,7 @@ def get_time_grouped_articles(articles, group_by="month", start_time=1980,
         end_time=2016):
     articles_group = collections.defaultdict(list)
     for article in articles:
-        key = util.get_date_key(article.fulldate, group_by=group_by)
+        key = utils.get_date_key(article.fulldate, group_by=group_by)
         if int(str(key)[:4]) < start_time:
             continue
         if int(str(key)[:4]) > end_time:
@@ -108,9 +110,9 @@ def generate_scatter_dist_plot(articles, num_ideas, plot_dir, prefix,
                  for k in articles_group}
     ts_correlation = get_ts_correlation(info_dict, num_ideas,
                                         normalize=True)
-    xs, ys = [], [], []
-    for i in range(total):
-        for j in range(i + 1, total):
+    xs, ys = [], []
+    for i in range(num_ideas):
+        for j in range(i + 1, num_ideas):
             if np.isnan(pmi[i, j]) or np.isnan(ts_correlation[i, j]):
                 continue
             if np.isinf(pmi[i, j]) or np.isinf(ts_correlation[i, j]):
@@ -140,13 +142,14 @@ def generate_scatter_dist_plot(articles, num_ideas, plot_dir, prefix,
             fout.write("%s\n" % json.dumps(
                 {"name": "correlation between correlation and PMI",
                  "coef": c, "p-value": p}))
+    filename = "%s/%s_joint_plot.pdf" % (plot_dir, prefix)
     if make_plots:
         fig = pf.joint_plot(np.array(xs), np.array(ys),
                             xlabel="prevalence correlation",
                             ylabel="cooccurrence",
                             xlim=(-1, 1))
-        pf.savefig(fig, "%s/%s_joint_plot.pdf" % (plot_dir, prefix))
-    return pmi, ts_correlation
+        pf.savefig(fig, filename)
+    return pmi, ts_correlation, filename
 
 
 def get_combined_extreme_pairs(pmi, corr, idea_names, output_file, count=100):
@@ -187,12 +190,12 @@ def get_combined_extreme_pairs(pmi, corr, idea_names, output_file, count=100):
                 idea_names[i], idea_names[j]))
 
 
-def plot_top_pairs(articles, idea_names, prefix, num_ides,
+def plot_top_pairs(articles, idea_names, prefix, num_ideas,
                    strength_file, output_dir,
                    top=5, cooccur_func=None, group_by="year"):
     type_list = collections.defaultdict(list)
     articles_group = get_time_grouped_articles(articles, group_by=group_by)
-    info_dict = {k: fc.get_count_cooccur(articles_group[k], func=cooccur_func)
+    info_dict = {k: get_count_cooccur(articles_group[k], func=cooccur_func)
                  for k in articles_group}
     ts_matrix = get_time_series(info_dict, num_ideas=num_ideas, normalize=True)
     with open(strength_file, 'r') as fin:
@@ -207,17 +210,18 @@ def plot_top_pairs(articles, idea_names, prefix, num_ides,
     xvalues = range(ts_matrix.shape[1])
     filename_map = {}
     for category in ["friends", "arms-race", "head-to-head", "tryst"]:
-        for rank, pmi, fst, snd in enumerate(type_list[category][:top]):
-            fig, filename = ef.plot_pair(ts_matrix, idea_names, fst, snd,
-                                         category, prefix, curr_dir,
-                                         save_file=True, 
-                                         xticklabels=articles_group.keys(),
-                                         step=5,
-                                         ylabel="frequency",
-                                         xlabel="time periods",
-                                         xlabel_rotation=30,
-                                         fig_pos=[0.2, 0.2, 0.75, 0.75])
-            file_key = "%s_%d" % (category.replace("_", ""), rank + 1)
+        for rank, t in enumerate(type_list[category][:top]):
+            pmi, fst, snd = t
+            fig, filename = plot_pair(ts_matrix, idea_names, fst, snd,
+                                      category, prefix, output_dir,
+                                      save_file=True, 
+                                      xticklabels=articles_group.keys(),
+                                      step=5,
+                                      ylabel="frequency",
+                                      xlabel="time periods",
+                                      xlabel_rotation=30,
+                                      fig_pos=[0.2, 0.2, 0.75, 0.75])
+            file_key = "%s_%d" % (category.replace("-", ""), rank + 1)
             filename_map[file_key] = filename
     return filename_map
 
@@ -229,14 +233,16 @@ def plot_pair(ts_matrix, idea_names, fst, snd, category, prefix, output_dir,
               fig_pos=[0.2, 0.15, 0.75, 0.8], xlabel_rotation=None, ylim=None,
               yticks=None, shapes=None, linewidth=5,
               rc=None, fig_size=pf.FIG_SIZE,
-              despine=False, ticksize=None, style="whitegrid", xlim=None):
+              despine=False, ticksize=None, style="white", xlim=None):
     if type(idea_names) == dict:
-        reverse_idea_names = util.get_reverse_dict(idea_names)
+        reverse_idea_names = utils.get_reverse_dict(idea_names)
     else:
         reverse_idea_names = {d: i for (i, d) in enumerate(idea_names)}
     xvalues = range(ts_matrix.shape[1])
-    filename = "%s/%s_%s_%s_%s.pdf" % (output_dir, prefix, category, fst[:15], snd[:15])
-    colors = sns.xkcd_palette([COLOR_DICT[category]] * 2)
+    filename = "%s/%s_%s_%s_%s.pdf" % (output_dir, prefix, category,
+                                       fst[:15].replace(" ", "_"),
+                                       snd[:15].replace(" ", "_"))
+    colors = pf.sns.xkcd_palette([COLOR_DICT[category]] * 2)
     if short_idea_names:
         legend = [short_idea_names[fst], short_idea_names[snd]]
     else:
@@ -272,13 +278,12 @@ def plot_pair(ts_matrix, idea_names, fst, snd, category, prefix, output_dir,
                         fig_pos=fig_pos,
                         xlabel_rotation=xlabel_rotation, ylim=ylim,
                         shapes=shapes, linewidth=linewidth, rc=rc,
-                        fig_size=fig_size, despine=despine, ticksize=ticksize)
-    if save_file:
-        fig.savefig(filename, bbox_inches='tight')
+                        fig_size=fig_size, despine=despine, ticksize=ticksize,
+                        filename=filename)
     return fig, filename
 
 
-def plot_average_top_strength(strength_file, output_dir, top=25)
+def plot_average_top_strength(strength_file, output_dir, top=25):
     relations = ["friends", "tryst", "head-to-head", "arms-race"]
     colors = pf.sns.xkcd_palette([COLOR_DICT[r] for r in relations])
     value_lists = [[] for _ in relations]
@@ -288,13 +293,15 @@ def plot_average_top_strength(strength_file, output_dir, top=25)
     for (i, r) in enumerate(relations):
         value_lists[i].append(strength[r])
         errorbar_lists[i].append(sems[r])
+    filename = "%s/average_top_%d.pdf" % (output_dir, top)
     fig = pf.plot_bar(value_lists, errorbar_list=errorbar_lists,
                       color_list=colors,
                       fig_size=(8, 7),
-                      fig_pos=(0.13, 0.2, 0.82, 0.75),
-                      legend=relations, ylabel="strength")
-    filename = "%s/average_top_%d.pdf" % (output_dir, top)
-    pf.savefig(fig, filename)
+                      xticklabel=([0], [""]),
+                      xlim=(0, 1),
+                      fig_pos=(0.15, 0.05, 0.82, 0.85),
+                      legend=relations, ylabel="strength",
+                      filename=filename)
     return filename
 
 
@@ -313,15 +320,19 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
     strength_file = "%s/%s_comb_extreme_pairs.txt" % (figure_dir, prefix)
     get_combined_extreme_pairs(pmi, ts_corr, idea_names, strength_file,
                                count=100)
+    
     # generate strength figure
     average_file = plot_average_top_strength(strength_file, figure_dir, top=25)
     info["average_file"] = average_file
+    
     # generate figures
     filename_map = plot_top_pairs(articles, idea_names, prefix, num_ideas,
                                   strength_file, figure_dir,
                                   top=5,
                                   cooccur_func=cooccur_func,
                                   group_by="year")
+    for k in filename_map:
+        info[k] = filename_map[k]
 
     # generate tables
     st.get_top_relationship(strength_file,
@@ -329,10 +340,19 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
                             top=5)
     info["table_file"] = "%s/%s_top_five.tex" % (table_dir, prefix)
     st.get_top_relationship(strength_file,
-                            "%s/%s_top_50.tex" % name,
+                            "%s/%s_top_50.tex" % (table_dir, prefix),
                             top=5)
     # generate pdf
-    tex_file = "%s/%s_main.tex" % (final_output_dir, prefix)
+    for k in info.keys():
+        info[k] = info[k][len(output_dir) + 1:]
+        if info[k].endswith(".pdf"):
+            info[k] = "{{%s}%s}" % (info[k][:-4], info[k][-4:])
+        else:
+            info[k] = "{%s}" % (info[k])
+    tex_file = "%s/%s_main.tex" % (output_dir, prefix)
     to.write_tex_file(tex_file, info)
-    os.system("./mklatex.sh %s" % tex_file)
+    cwd = os.getcwd()
+    os.chdir(output_dir)
+    os.system("%s/mklatex.sh %s" % (cwd, tex_file))
+    os.chdir(cwd)
 

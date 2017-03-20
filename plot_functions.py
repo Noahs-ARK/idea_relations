@@ -6,11 +6,14 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
+import os
 import collections
 import itertools
 import numpy as np
 import scipy.stats as ss
-from sklearn.decomposition import PCA
+import matplotlib
+if "DISPLAY" not in os.environ:
+    matplotlib.use("Agg")
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Arrow
@@ -33,7 +36,7 @@ COLOR_NAMES = ["cerulean", "light red", "seafoam", "dark orange",
         "ocean blue", "bluish purple", "pinkish", "pale orange",
         "aqua green", "pumpkin", "chocolate", "pine green"]
 
-def start_plotting(fig_size, fig_pos, style="whitegrid", rc=None, despine=False):
+def start_plotting(fig_size, fig_pos, style="white", rc=None, despine=False):
     with sns.axes_style(style, rc):
         fig = plt.figure(figsize=fig_size)
         if not fig_pos:
@@ -52,10 +55,10 @@ def frange(x, y, step):
 
 
 def end_plotting(fig, ax, title=None, xlabel=None,
-    ylabel=None, xlim=None, ylim=None, filename=None,
-    xticklabel=None, xlabel_rotation=None,
-    yticklabel=None, ylabel_rotation=None, label_text=None,
-    xtickgap=None):
+                 ylabel=None, xlim=None, ylim=None, filename=None,
+                 xticklabel=None, xlabel_rotation=None,
+                 yticklabel=None, ylabel_rotation=None, label_text=None,
+                 xtickgap=None):
     '''A set of common operations after plotting.'''
     if title:
         ax.set_title(title)
@@ -91,8 +94,9 @@ def savefig(fig, filename):
     fig.savefig(filename)
     plt.close()
 
+
 def ax_plot_lines(ax, xs, ys, colors, shapes, linestyles,
-        errorbar=False, linewidth=LINEWIDTH):
+                  errorbar=False, linewidth=LINEWIDTH):
     lines = []
     for (x, y, c, s, l) in zip(xs, ys, colors, shapes, linestyles):
         if errorbar:
@@ -106,16 +110,17 @@ def ax_plot_lines(ax, xs, ys, colors, shapes, linestyles,
         lines.append(l)
     return lines
 
+
 def plot_lines(xs, ys, title=None, xlabel=None,
-        ylabel=None, xlim=None, ylim=None,
-        colors=None, shapes=None, linestyles=None,
-        errorbar=False, legend=None, loc=0,
-        xticklabel=None, yticklabel=None,
-        xlabel_rotation=None, ylabel_rotation=None,
-        hlines=None, vlines=None, bbox_to_anchor=None,
-        fig_pos=None, fig_size=FIG_SIZE, label_text=None,
-        xdate=False, linewidth=LINEWIDTH, rc=None, despine=False,
-              ticksize=None, style="whitegrid"):
+               ylabel=None, xlim=None, ylim=None,
+               colors=None, shapes=None, linestyles=None,
+               errorbar=False, legend=None, loc=0,
+               xticklabel=None, yticklabel=None,
+               xlabel_rotation=None, ylabel_rotation=None,
+               hlines=None, vlines=None, bbox_to_anchor=None,
+               fig_pos=None, fig_size=FIG_SIZE, label_text=None,
+               xdate=False, linewidth=LINEWIDTH, rc=None, despine=False,
+               ticksize=None, style="white", filename=None):
     '''Plot lines for all pairs of xs and ys.
     Input:
         xs: a list of x-value lists
@@ -155,17 +160,19 @@ def plot_lines(xs, ys, title=None, xlabel=None,
             ax.axvline(x=x, linestyle='--', color='black')
     if legend:
         ax.legend(lines, legend, loc=loc, bbox_to_anchor=bbox_to_anchor,
-            frameon=False)
+                  frameon=False)
     if not xlim:
         diff = np.max(xs) - np.min(xs)
         xlim = (np.min(xs) - 0.02 * diff, np.max(xs) + 0.02 * diff)
     end_plotting(fig, ax, title=title, xlabel=xlabel,
-        ylabel=ylabel, xlim=xlim, ylim=ylim,
-        xticklabel=xticklabel, yticklabel=yticklabel,
-        xlabel_rotation=xlabel_rotation,
-        ylabel_rotation=ylabel_rotation, label_text=label_text)
+                 ylabel=ylabel, xlim=xlim, ylim=ylim,
+                 xticklabel=xticklabel, yticklabel=yticklabel,
+                 xlabel_rotation=xlabel_rotation,
+                 ylabel_rotation=ylabel_rotation, label_text=label_text)
     if ticksize is not None:
         ax.tick_params(axis='both', which='major', labelsize=ticksize)
+    if filename:
+        savefig(fig, filename)
     return fig
 
 
@@ -185,7 +192,8 @@ class SubsampleJointGrid(sns.JointGrid):
             Returns `self`.
         """
         if subsample > 0 and subsample < len(self.x):
-            indexes = np.random.choice(range(len(self.x)), subsample, replace=False)
+            indexes = np.random.choice(range(len(self.x)), subsample,
+                                       replace=False)
             plot_x = np.array([self.x[i] for i in indexes])
             plot_y = np.array([self.y[i] for i in indexes])
             plt.sca(self.ax_joint)
@@ -198,10 +206,10 @@ class SubsampleJointGrid(sns.JointGrid):
 
 
 def joint_plot(x, y, xlabel=None,
-        ylabel=None, xlim=None, ylim=None,
-        loc="best", color='#0485d1',
-        size=8, markersize=50, kind="kde",
-        scatter_color="r"):
+               ylabel=None, xlim=None, ylim=None,
+               loc="best", color='#0485d1',
+               size=8, markersize=50, kind="kde",
+               scatter_color="r"):
     with sns.axes_style("darkgrid"):
         if xlabel and ylabel:
             g = SubsampleJointGrid(xlabel, ylabel,
@@ -217,4 +225,51 @@ def joint_plot(x, y, xlabel=None,
         g.ax_joint.set_yticklabels(g.ax_joint.get_yticks())
         g.ax_joint.set_xticklabels(g.ax_joint.get_xticks())
     return g
+
+
+def plot_bar(value_lists, xlabel=None, fig_size=FIG_SIZE,
+             fig_pos=None, ylabel=None, xticklabel=None,
+             xlabel_rotation=None, width=-1, gap=1,
+             yticklabel=None, legend=None,
+             errorbar_list=None, color_list=sns.color_palette(n_colors=10),
+             ylim=None, ncol=1,
+             handlelength=None, loc=0, bbox_to_anchor=None,
+             handletextpad=None, columnspacing=None, 
+             vlines=None, hlines=None, xlim=None,
+             hatches=None, filename=None):
+    fig, ax = start_plotting(fig_size, fig_pos)
+    N = len(value_lists[0])
+    if width < 0:
+        width = 0.75 * gap / len(value_lists)
+    ind = np.arange(N) * gap
+    rects = []
+    for i in range(len(value_lists)):
+        rect = ax.bar(ind, value_lists[i], width, color=color_list[i],
+                      yerr=errorbar_list[i] if errorbar_list else None,
+                      error_kw={"ecolor": "black"},
+                      hatch=None if not hatches else hatches[i])
+        ind = ind + width
+        rects.append(rect)
+    xlim = (-width, max(ind) + width)
+    if hlines:
+        for y in hlines:
+            ax.axhline(y=y, linestyle='--', color='grey')
+    if vlines:
+        for x in vlines:
+            ax.axvline(x=x, linestyle='--', color='grey')
+    if legend:
+        ax.legend(rects, legend, loc=loc,
+                  bbox_to_anchor=bbox_to_anchor,
+                  ncol=ncol, handlelength=handlelength,
+                  handletextpad=handletextpad,
+                  columnspacing=columnspacing,
+                  frameon=False)
+    end_plotting(fig, ax, xlabel=xlabel, ylabel=ylabel,
+                 xticklabel=xticklabel,
+                 xlabel_rotation=xlabel_rotation,
+                 xlim=xlim,
+                 yticklabel=yticklabel, ylim=ylim)
+    if filename:
+        savefig(fig, filename)
+    return fig
 

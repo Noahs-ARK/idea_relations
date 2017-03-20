@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import collections
-import gzip
-import itertools
-import json
+import os
+import functools
 import numpy as np
 import word_count as wc
 import utils
@@ -12,11 +11,10 @@ import utils
 def convert_word_count_mallet(word_dict, input_file, output_file,
                               words_func=None):
     doc_id = 0
-    with gzip.open(input_file) as fin, open(output_file, "w") as fout:
-        for line in fin:
+    with open(output_file, "w") as fout:
+        for data in utils.read_json_list(input_file):
             doc_id += 1
-            data = json.loads(line)
-            words = collections.Counter(words_func(data["words"]))
+            words = collections.Counter(words_func(data["text"]))
             words = [(word_dict[w], words[w])
                      for w in words if w in word_dict]
             words.sort()
@@ -75,16 +73,16 @@ def load_articles(input_file, topic_dir):
     vocab_file = "%s/data.word_id.dict" % topic_dir
     doc_topic_file = "%s/doc-topics.gz" % topic_dir
     topic_word_file = "%s/topic-words.gz" % topic_dir
-    vocab = util.read_word_dict(vocab_file)
+    vocab = utils.read_word_dict(vocab_file)
     topic_map = load_topic_words(vocab, topic_word_file)
     articles = load_doc_topics(input_file, doc_topic_file)
     return articles, vocab, topic_map
 
 
 def check_mallet_directory(directory):
-    vocab_file = "%s/data.word_id.dict" % topic_dir
-    doc_topic_file = "%s/doc-topics.gz" % topic_dir
-    topic_word_file = "%s/topic-words.gz" % topic_dir
+    vocab_file = "%s/data.word_id.dict" % directory
+    doc_topic_file = "%s/doc-topics.gz" % directory
+    topic_word_file = "%s/topic-words.gz" % directory
     return all([os.path.exists(filename)
                for filename in [vocab_file, doc_topic_file, topic_word_file]])
 

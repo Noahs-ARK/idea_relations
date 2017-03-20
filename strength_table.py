@@ -5,7 +5,7 @@ import collections
 import io
 import numpy as np
 import scipy.stats as ss
-import util
+import utils
 
 TopicPair = collections.namedtuple("TopicPair",
         ["combined_score", "pmi", "correlation",
@@ -14,7 +14,7 @@ TopicPair = collections.namedtuple("TopicPair",
 
 def write_type_rows(fout, data, top=5):
     fout.write("combined & pmi & correlation & first & second\\\\\n")
-    types = ["friends", "romance", "head-to-head", "arms-race"]
+    types = ["friends", "tryst", "head-to-head", "arms-race"]
     for t in types:
         fout.write("\\midrule\n")
         fout.write("\\multicolumn{5}{c}{%s}\\\\\n" % t)
@@ -47,15 +47,17 @@ def load_all_pairs(table_file):
     return type_list
 
 
-def get_top_five_relationship(table_file, output_file, top=5):
+def get_top_relationship(table_file, output_file, top=5):
     type_list = load_all_pairs(table_file)
-    util.write_latex_table(output_file, "cccp{6cm}p{6cm}",
+    utils.write_latex_table(output_file, "cccp{5cm}p{5cm}",
             functools.partial(write_type_rows, data=type_list, top=top))
 
 
-def get_relation_strength(table_file, top=10, normalize=False, return_sem=False, return_all=False):
+def get_relation_strength(table_file, top=10, normalize=False,
+                          return_sem=False, return_all=False):
     type_list = load_all_pairs(table_file)
-    scores = {k: [abs(v.combined_score) for v in type_list[k][:top]] for k in type_list}
+    scores = {k: [abs(v.combined_score) for v in type_list[k][:top]]
+              for k in type_list}
     mean = {k: np.mean(scores[k]) for k in type_list}
     if return_all:
         return scores, mean, {k: ss.sem(scores[k]) for k in type_list}

@@ -38,6 +38,10 @@ parser.add_argument("--mallet_bin_dir",
 parser.add_argument("--background_file",
                     help=("background file to learn important keywords"),
                     type=str)
+parser.add_argument("--prefix",
+                    help=("name for the exploration"),
+                    type=str,
+                    default="exp")
 parser.add_argument("--num_ideas",
                     help=("number of ideas, i.e., "
                           "number of topics or keywords"),
@@ -55,9 +59,9 @@ parser.add_argument("--nostopwords",
 args = parser.parse_args()
 
 def main():
-    input_file = args.input_file
-    data_output_dir = args.data_output_dir
-    final_output_dir = args.final_output_dir
+    input_file = os.path.abspath(args.input_file)
+    data_output_dir = os.path.abspath(args.data_output_dir)
+    final_output_dir = os.path.abspath(args.final_output_dir)
     # Support some standard preprocessing
     if args.tokenize:
         # tokenize input_file to token_file
@@ -75,15 +79,15 @@ def main():
                                  filter_stopwords=args.nostopwords)
         preprocessing.preprocess_input(input_file, lemma_file)
         input_file = lemma_file
-
     # generate topics or lexicons
     option = args.option
     num_ideas = args.num_ideas
     cooccur_func = functools.partial(il.generate_cooccurrence_from_int_set,
                                      num_ideas=num_ideas)
+    prefix = args.prefix
     if option == "topics":
         logging.info("using topics to represent ideas")
-        prefix = "topics"
+        prefix = "%s_topics" % prefix
         # generate mallet topics
         mt.get_mallet_input_from_words(input_file, data_output_dir)
         if not mt.check_mallet_directory(data_output_dir):
@@ -91,21 +95,24 @@ def main():
             # users can also generate mallet-style topic inputs inputs
             logging.info("running mallet to get topics")
             os.system("./mallet.sh %s %s %d" % (args.mallet_bin_dir,
-                                               data_output_dir,
-                                               num_ideas))
+                                                data_output_dir,
+                                                num_ideas))
         # load mallet outputs
         articles, vocab, idea_names = mt.load_articles(input_file,
                                                        data_output_dir)
     elif option == "keywords":
         logging.info("using keywords to represent ideas")
+        prefix = "%s_keywords" % prefix
         # idenfity keyword ideas using fighting lexicon
-        lexicon_file = "%s/fighting_lexicon.txt" % data_dir
+        lexicon_file = "%s/fighting_lexicon.txt" % data_output_dir
         other_files = [args.background_file]
-        fl.get_top_distinguishing(input_file, other_files, lexicon_file)
+        fl.get_top_distinguishing(input_file, other_files, data_output_dir,
+                                  lexicon_file)
         # load keywords
-        articles, word_set, topic_map = fl.load_word_articles(
-            words_file,
+        articles, word_set, idea_names = fl.load_word_articles(
+            input_file,
             lexicon_file,
+            data_output_dir,
             vocab_size=num_ideas)
     else:
         logging.error("unsupported idea representations")
@@ -113,7 +120,6 @@ def main():
     # compute strength between pairs and generate outputs
     il.generate_all_outputs(articles, num_ideas, idea_names, prefix,
                            final_output_dir, cooccur_func)
-
 
 
 if __name__ == "__main__":
