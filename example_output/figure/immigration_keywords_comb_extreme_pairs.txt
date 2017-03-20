@@ -1,0 +1,200 @@
+friends	2.264692	2.381315	0.951026	ice	custom enforcement
+friends	2.218206	2.535473	0.874869	cuban	cuba
+head-to-head	1.839500	-2.748887	-0.669180	obama	naturalization service
+friends	1.780070	2.312647	0.769711	smuggler	smuggling
+friends	1.613469	1.899865	0.849255	rubio	bipartisan
+friends	1.604341	1.689932	0.949352	overhaul	bipartisan
+head-to-head	1.413844	-2.908631	-0.486086	naturalization service	rubio
+friends	1.374009	1.504348	0.913359	employer	hire
+head-to-head	1.367716	-1.533746	-0.891749	naturalization service	custom enforcement
+friends	1.351116	1.960901	0.689028	cuban	miami
+friends	1.328084	1.457156	0.911422	application	applicant
+friends	1.291695	1.833322	0.704566	haitian	miami
+friends	1.270291	1.554390	0.817228	rubio	overhaul
+friends	1.252793	1.539245	0.813901	refugee	haitian
+friends	1.248612	1.899840	0.657220	miami	cuba
+friends	1.231979	1.552720	0.793433	hire	hiring
+friends	1.208954	1.626559	0.743259	chinese	asian
+friends	1.185130	1.958793	0.605031	detention center	detention
+friends	1.167094	1.474141	0.791711	employer	hiring
+friends	1.146406	1.457140	0.786751	comprehensive	bipartisan
+friends	1.123554	1.390574	0.807979	refugee	asylum
+friends	1.106534	1.338747	0.826544	trump	deport
+friends	1.083246	1.527457	0.709183	english	language
+friends	1.083029	1.862734	0.581419	cuban	haitian
+friends	1.053207	1.271888	0.828066	comprehensive	overhaul
+friends	1.035153	1.455962	0.710975	obama	rubio
+friends	1.033164	1.302736	0.793072	bipartisan	senate
+head-to-head	0.990251	-1.193014	-0.830041	naturalization service	ice
+friends	0.983483	1.439266	0.683322	rubio	comprehensive
+friends	0.974133	1.171913	0.831234	reform	comprehensive
+friends	0.967696	1.475114	0.656014	asylum	haitian
+head-to-head	0.956564	-1.440199	-0.664189	naturalization service	comprehensive
+friends	0.909832	1.185190	0.767668	republican	rubio
+friends	0.904187	0.980318	0.922341	bill	senate
+friends	0.897755	1.642870	0.546455	social security	card
+head-to-head	0.896776	-2.146446	-0.417796	rubio	smuggling
+friends	0.888117	1.259222	0.705290	refugee	cuban
+friends	0.883751	1.043066	0.847262	reform	bipartisan
+friends	0.874793	0.992612	0.881304	comprehensive	senate
+friends	0.872503	1.444269	0.604114	chinese	smuggling
+friends	0.849785	1.087449	0.781449	overhaul	senate
+friends	0.845130	0.953924	0.885952	ice	enforcement
+friends	0.842362	1.069569	0.787571	amnesty	legal status
+friends	0.840125	1.649835	0.509218	haitian	cuba
+friends	0.837619	1.205114	0.695054	obama	overhaul
+friends	0.827198	1.321197	0.626097	chinese	smuggler
+friends	0.823159	1.630072	0.504983	english	spanish
+friends	0.813601	1.109776	0.733122	employer	labor
+friends	0.812502	1.010709	0.803893	mexico	mexican
+head-to-head	0.802680	-0.934045	-0.859359	latino	naturalization service
+friends	0.788919	1.468735	0.537142	migrant	migration
+friends	0.786613	1.048616	0.750144	application	apply
+friends	0.776077	1.059550	0.732459	deportation	deport
+friends	0.767255	1.009255	0.760220	apply	eligible
+friends	0.765849	0.899382	0.851528	republican	obama
+friends	0.765151	0.857652	0.892146	enforcement	custom enforcement
+friends	0.762839	1.482488	0.514567	driver license	social security
+head-to-head	0.752405	-1.400001	-0.537432	cuban	ice
+head-to-head	0.714615	-0.968797	-0.737631	latino	asylum
+head-to-head	0.705981	-1.334144	-0.529164	driver license	cuba
+head-to-head	0.682123	-1.852636	-0.368191	rubio	smuggler
+head-to-head	0.676329	-1.128627	-0.599250	cuban	custom enforcement
+head-to-head	0.656328	-0.949593	-0.691168	asylum	economy
+head-to-head	0.621648	-0.802169	-0.774960	republican	naturalization service
+head-to-head	0.620811	-2.121001	-0.292697	trump	naturalization service
+head-to-head	0.600524	-1.480070	-0.405740	haitian	overhaul
+head-to-head	0.590521	-1.999533	-0.295329	haitian	rubio
+arms-race	-0.556613	-0.717464	0.775806	economy	custom enforcement
+head-to-head	0.543242	-1.409730	-0.385351	obama	haitian
+head-to-head	0.542829	-0.855879	-0.634236	latino	haitian
+head-to-head	0.537043	-0.629141	-0.853614	naturalization service	economy
+head-to-head	0.532247	-1.146564	-0.464210	overhaul	cuba
+head-to-head	0.526662	-0.912081	-0.577429	naturalization service	overhaul
+arms-race	-0.509021	-0.659055	0.772351	ice	economy
+head-to-head	0.499860	-0.992113	-0.503833	obama	smuggling
+head-to-head	0.489938	-1.065387	-0.459869	haitian	georgia
+head-to-head	0.484097	-1.033675	-0.468326	naturalization service	bipartisan
+head-to-head	0.480129	-1.059548	-0.453146	custom enforcement	welfare
+head-to-head	0.477744	-0.848178	-0.563260	cuban	driver license
+head-to-head	0.475697	-0.832665	-0.571295	legal status	smuggling
+head-to-head	0.455614	-1.002791	-0.454346	latino	smuggling
+head-to-head	0.453931	-0.774878	-0.585810	arizona	naturalization service
+head-to-head	0.449246	-0.885371	-0.507410	republican	haitian
+head-to-head	0.447120	-0.762381	-0.586478	custom enforcement	cuba
+head-to-head	0.434863	-0.977064	-0.445071	ice	haitian
+head-to-head	0.434668	-0.875581	-0.496434	comprehensive	smuggling
+head-to-head	0.432061	-0.786443	-0.549385	cuban	georgia
+head-to-head	0.431657	-1.327851	-0.325080	asylum	wage
+tryst	-0.421253	1.133083	-0.371776	applicant	driver license
+head-to-head	0.416370	-1.498206	-0.277913	rubio	jail
+head-to-head	0.415764	-0.913273	-0.455246	citizenship	smuggling
+head-to-head	0.406540	-0.609976	-0.666486	refugee	custom enforcement
+head-to-head	0.404670	-0.746073	-0.542400	ice	cuba
+head-to-head	0.394824	-0.644596	-0.612514	cuban	enforcement
+head-to-head	0.394813	-0.766587	-0.515027	undocumented	cuba
+head-to-head	0.391774	-0.468953	-0.835423	refugee	latino
+head-to-head	0.385880	-0.683961	-0.564184	reform	smuggling
+head-to-head	0.383595	-1.083125	-0.354156	bipartisan	smuggling
+head-to-head	0.382261	-1.783173	-0.214371	rubio	detention center
+head-to-head	0.379763	-0.828247	-0.458515	cuban	overhaul
+head-to-head	0.378165	-0.622957	-0.607049	enforcement	cuba
+head-to-head	0.377367	-0.469993	-0.802920	undocumented	naturalization service
+head-to-head	0.370609	-0.846825	-0.437645	overhaul	smuggling
+tryst	-0.358915	1.093437	-0.328245	spanish	salvador
+tryst	-0.327320	1.295604	-0.252639	custom enforcement	detention center
+arms-race	-0.325442	-0.898934	0.362031	ice	rubio
+tryst	-0.323400	0.902298	-0.358418	smuggler	migration
+tryst	-0.311474	1.036297	-0.300564	cuban	rubio
+tryst	-0.306663	0.567378	-0.540493	latino	salvador
+tryst	-0.277011	1.003318	-0.276095	applicant	green card
+arms-race	-0.260635	-0.915242	0.284772	rubio	custom enforcement
+tryst	-0.258890	0.967277	-0.267648	latino	asian
+tryst	-0.256108	0.619550	-0.413378	deported	asylum
+tryst	-0.241651	0.665892	-0.362899	enforcement	border patrol
+arms-race	-0.240739	-0.495572	0.485781	citizenship	ice
+arms-race	-0.233159	-0.855973	0.272390	ice	bipartisan
+tryst	-0.232311	0.858637	-0.270558	migrant	smuggling
+tryst	-0.225391	0.492539	-0.457611	applicant	system
+tryst	-0.223625	1.439163	-0.155386	ice	detention center
+tryst	-0.217418	0.785327	-0.276850	arizona	smuggler
+tryst	-0.217037	0.498901	-0.435029	resident	salvador
+arms-race	-0.216931	-0.394074	0.550483	republican	custom enforcement
+tryst	-0.216258	0.544857	-0.396909	deportation	asylum
+arms-race	-0.215293	-0.359013	0.599679	republican	ice
+arms-race	-0.214445	-0.399491	0.536795	citizenship	custom enforcement
+tryst	-0.213723	0.984036	-0.217190	hispanic	asian
+arms-race	-0.210737	-0.588464	0.358113	welfare	smuggling
+tryst	-0.208405	0.554584	-0.375785	alien	criminal
+tryst	-0.208016	0.617146	-0.337062	english	salvador
+tryst	-0.207837	0.621805	-0.334248	ice	salvador
+tryst	-0.203157	0.512763	-0.396201	child	salvador
+tryst	-0.202158	0.668782	-0.302277	asylum	jail
+arms-race	-0.200909	-0.602597	0.333405	detention center	hiring
+tryst	-0.192607	0.859781	-0.224019	arizona	border patrol
+tryst	-0.191218	0.394596	-0.484593	enforcement	smuggling
+tryst	-0.190555	0.477497	-0.399070	border	smuggling
+arms-race	-0.190205	-0.816591	0.232926	cuban	hiring
+arms-race	-0.186818	-0.755010	0.247438	custom enforcement	bipartisan
+tryst	-0.179234	0.459858	-0.389759	custom enforcement	salvador
+tryst	-0.175048	1.139299	-0.153646	application	green card
+tryst	-0.171936	0.287638	-0.597750	alien	enforcement
+tryst	-0.171026	0.454986	-0.375894	illegally	smuggler
+tryst	-0.167886	0.440741	-0.380919	enforcement	smuggler
+tryst	-0.165041	0.261005	-0.632332	salvador	pay
+tryst	-0.163353	0.485247	-0.336639	cuban	spanish
+arms-race	-0.162476	-0.422387	0.384662	ice	bill
+arms-race	-0.161975	-0.397681	0.407299	bill	custom enforcement
+tryst	-0.160774	0.320870	-0.501055	naturalization service	green card
+arms-race	-0.160015	-0.757441	0.211258	asylum	hiring
+tryst	-0.159912	0.399475	-0.400306	economy	welfare
+tryst	-0.158098	0.534043	-0.296040	rubio	cuba
+tryst	-0.157354	0.353578	-0.445032	population	salvador
+tryst	-0.157306	0.339990	-0.462678	alien	legally
+tryst	-0.154749	0.261634	-0.591473	refugee	population
+arms-race	-0.154384	-0.391659	0.394181	asylum	asian
+tryst	-0.153676	0.399086	-0.385069	migration	smuggling
+tryst	-0.150454	0.375137	-0.401063	miami	spanish
+arms-race	-0.149348	-0.785391	0.190157	rubio	georgia
+tryst	-0.147860	0.418902	-0.352971	chinese	migration
+tryst	-0.146890	0.268609	-0.546853	alien	driver license
+tryst	-0.146453	0.381261	-0.384129	legally	salvador
+tryst	-0.146366	0.348119	-0.420448	deported	naturalization service
+arms-race	-0.144723	-0.646459	0.223871	economy	jail
+tryst	-0.144496	0.549117	-0.263141	arizona	smuggling
+tryst	-0.144327	0.634985	-0.227291	employer	green card
+tryst	-0.143978	0.278185	-0.517563	naturalization service	criminal
+tryst	-0.143132	0.385095	-0.371681	deportation	agent
+tryst	-0.141107	0.754096	-0.187121	border	smuggler
+tryst	-0.140747	0.306074	-0.459846	custom enforcement	smuggling
+arms-race	-0.140052	-0.483845	0.289456	english	smuggling
+arms-race	-0.138155	-0.753016	0.183469	border patrol	asian
+arms-race	-0.137529	-0.448915	0.306358	cuban	card
+arms-race	-0.132547	-0.558649	0.237264	custom enforcement	senate
+arms-race	-0.130991	-0.516422	0.253652	ice	senate
+arms-race	-0.123954	-0.466894	0.265486	hispanic	custom enforcement
+arms-race	-0.123904	-0.451283	0.274561	hispanic	ice
+arms-race	-0.123453	-0.380455	0.324489	asian	cuba
+arms-race	-0.120557	-0.464115	0.259756	refugee	hiring
+arms-race	-0.118640	-0.553775	0.214238	california	cuba
+arms-race	-0.115601	-0.299245	0.386310	english	agent
+arms-race	-0.109244	-0.577634	0.189123	rubio	driver license
+arms-race	-0.107662	-1.025709	0.104963	hiring	cuba
+arms-race	-0.106520	-0.615566	0.173044	wage	custom enforcement
+arms-race	-0.100668	-0.389486	0.258464	agent	language
+arms-race	-0.100419	-0.210001	0.478183	reform	custom enforcement
+arms-race	-0.097631	-0.216337	0.451289	economy	criminal
+arms-race	-0.097551	-0.640997	0.152186	card	cuba
+arms-race	-0.092235	-0.176593	0.522301	comprehensive	custom enforcement
+arms-race	-0.091210	-0.517182	0.176359	smuggler	welfare
+arms-race	-0.087794	-0.818117	0.107312	employer	detention center
+arms-race	-0.085604	-0.198448	0.431367	population	custom enforcement
+arms-race	-0.085594	-0.329022	0.260146	applicant	detention center
+arms-race	-0.085162	-0.206984	0.411441	overhaul	custom enforcement
+arms-race	-0.082676	-0.138930	0.595091	green card	georgia
+arms-race	-0.078186	-0.153077	0.510763	reform	ice
+arms-race	-0.077426	-0.203944	0.379645	job	custom enforcement
+arms-race	-0.075966	-0.402887	0.188554	arizona	green card
+arms-race	-0.075798	-0.532916	0.142232	haitian	hiring
+arms-race	-0.075309	-0.162364	0.463828	million	custom enforcement
+arms-race	-0.073788	-0.200497	0.368027	hiring	salvador

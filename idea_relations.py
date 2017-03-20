@@ -283,7 +283,7 @@ def plot_pair(ts_matrix, idea_names, fst, snd, category, prefix, output_dir,
     return fig, filename
 
 
-def plot_average_top_strength(strength_file, output_dir, top=25):
+def plot_average_top_strength(strength_file, prefix, output_dir, top=25):
     relations = ["friends", "tryst", "head-to-head", "arms-race"]
     colors = pf.sns.xkcd_palette([COLOR_DICT[r] for r in relations])
     value_lists = [[] for _ in relations]
@@ -293,7 +293,7 @@ def plot_average_top_strength(strength_file, output_dir, top=25):
     for (i, r) in enumerate(relations):
         value_lists[i].append(strength[r])
         errorbar_lists[i].append(sems[r])
-    filename = "%s/average_top_%d.pdf" % (output_dir, top)
+    filename = "%s/%s_average_top_%d.pdf" % (output_dir, prefix, top)
     fig = pf.plot_bar(value_lists, errorbar_list=errorbar_lists,
                       color_list=colors,
                       fig_size=(8, 7),
@@ -322,7 +322,8 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
                                count=100)
     
     # generate strength figure
-    average_file = plot_average_top_strength(strength_file, figure_dir, top=25)
+    average_file = plot_average_top_strength(strength_file, prefix,
+                                             figure_dir, top=25)
     info["average_file"] = average_file
     
     # generate figures

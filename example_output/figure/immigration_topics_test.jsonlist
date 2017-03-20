@@ -1,0 +1,5 @@
+{"k2": 72.354911624191857, "p-value": 1.942363782203061e-16, "name": "correlation normality test"}
+{"k2": 1.0630475398684291, "p-value": 0.58770875410900791, "name": "PMI normality test"}
+{"p-value": 0.7648072204859955, "name": "correlation unimodality test", "d": 0.009151883241296347}
+{"p-value": 0.9731523582546033, "name": "PMI unimodality test", "d": 0.0073126216758481345}
+{"p-value": 2.57923558589944e-112, "name": "correlation between correlation and PMI", "coef": 0.58273610674388931}

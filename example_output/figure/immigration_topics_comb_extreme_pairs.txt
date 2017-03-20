@@ -1,0 +1,200 @@
+friends	0.443923	0.539933	0.822182	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+friends	0.417275	0.505429	0.825585	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.398836	0.502374	0.793901	war,military,israel,government,united state,iraq,country,year,american,army	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+head-to-head	0.389391	-0.496740	-0.783893	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.362399	0.414037	0.875282	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.342234	0.461675	0.741287	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.337579	0.504449	0.669203	police,two,officer,man,authority,found,killed,death,one,official	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+friends	0.335723	0.492951	0.681047	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.328533	-0.495322	-0.663271	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+friends	0.327921	0.431944	0.759175	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.321831	0.398109	0.808398	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.319021	0.494331	0.645358	country,united state,canada,airport,official,immigration,canadian,visa,year,germany	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.311147	-0.433855	-0.717168	obama,president,immigration,republican,congress,reform,white house,would,action,year	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+friends	0.307807	0.395380	0.778511	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+head-to-head	0.301234	-0.457857	-0.657923	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.300835	-0.452228	-0.665229	obama,president,immigration,republican,congress,reform,white house,would,action,year	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+head-to-head	0.296441	-0.481450	-0.615725	obama,president,immigration,republican,congress,reform,white house,would,action,year	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+friends	0.292746	0.418019	0.700318	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	war,military,israel,government,united state,iraq,country,year,american,army
+head-to-head	0.287587	-0.356503	-0.806689	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+head-to-head	0.286733	-0.409385	-0.700398	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+head-to-head	0.283520	-0.545387	-0.519851	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.279834	-0.360339	-0.776586	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+head-to-head	0.271133	-0.361878	-0.749238	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+head-to-head	0.265713	-0.344036	-0.772339	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+friends	0.260184	0.395493	0.657872	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+head-to-head	0.260110	-0.413411	-0.629180	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan	obama,president,immigration,republican,congress,reform,white house,would,action,year
+head-to-head	0.254383	-0.344830	-0.737707	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.243008	-0.378909	-0.641335	war,military,israel,government,united state,iraq,country,year,american,army	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+friends	0.241951	0.412279	0.586862	police,two,officer,man,authority,found,killed,death,one,official	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.238807	-0.334049	-0.714887	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.236606	-0.418960	-0.564746	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+friends	0.235565	0.314588	0.748807	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.231858	-0.349387	-0.663615	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act
+friends	0.226352	0.450370	0.502592	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	trump,would,immigrant,donald trump,campaign,clinton,immigration,people,undocumented,country
+friends	0.225474	0.439518	0.513003	immigrant,community,help,language,english,service,people,center,program,many	school,student,child,education,teacher,class,parent,district,year,high school
+head-to-head	0.222658	-0.320766	-0.694144	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+friends	0.217135	0.398710	0.544592	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.215537	-0.317902	-0.677998	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan
+head-to-head	0.214508	-0.285953	-0.750151	immigrant,percent,number,population,immigration,study,year,report,people,million	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+head-to-head	0.213736	-0.341087	-0.626631	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.210340	-0.331342	-0.634813	obama,president,immigration,republican,congress,reform,white house,would,action,year	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+head-to-head	0.207932	-0.330776	-0.628620	immigration,one,policy,even,would,may,political,problem,many,way	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+friends	0.207787	0.272277	0.763147	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+head-to-head	0.205700	-0.351735	-0.584816	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement
+head-to-head	0.205202	-0.377567	-0.543485	police,two,officer,man,authority,found,killed,death,one,official	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure
+head-to-head	0.204586	-0.373777	-0.547347	money,tax,million,year,business,company,cost,pay,billion,would	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.204385	0.251916	0.811321	immigration,alien,law,illegal,united state,would,legal,congress,year,country	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government
+friends	0.203899	0.273056	0.746731	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate
+head-to-head	0.202101	-0.354253	-0.570499	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	obama,president,immigration,republican,congress,reform,white house,would,action,year
+head-to-head	0.200878	-0.311181	-0.645536	country,united state,canada,airport,official,immigration,canadian,visa,year,germany	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.200665	-0.265909	-0.754638	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+friends	0.198479	0.337488	0.588106	obama,president,immigration,republican,congress,reform,white house,would,action,year	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+friends	0.196306	0.248248	0.790768	immigrant,community,help,language,english,service,people,center,program,many	one,day,like,two,home,time,back,work,house,food
+friends	0.195821	0.274773	0.712666	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	county,immigrant,illegal,city,local,resident,community,virginia,would,official
+head-to-head	0.194662	-0.492822	-0.394994	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+friends	0.192655	0.377654	0.510136	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.190487	-0.320291	-0.594731	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.189981	-0.345522	-0.549838	police,two,officer,man,authority,found,killed,death,one,official	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.188439	0.294884	0.639027	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.187458	-0.249495	-0.751349	agency,official,immigration,department,report,service,would,office,new,system	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+head-to-head	0.186568	-0.293140	-0.636447	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.185834	-0.407682	-0.455831	immigrant,american,america,country,black,many,white,people,new,asian	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program
+head-to-head	0.185246	-0.381409	-0.485687	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign
+head-to-head	0.182617	-0.262105	-0.696734	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+head-to-head	0.180587	-0.396579	-0.455361	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	obama,president,immigration,republican,congress,reform,white house,would,action,year
+head-to-head	0.180570	-0.513998	-0.351304	police,two,officer,man,authority,found,killed,death,one,official	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+head-to-head	0.177517	-0.284019	-0.625017	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+head-to-head	0.176651	-0.454220	-0.388911	immigrant,community,help,language,english,service,people,center,program,many	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.175948	0.225776	0.779301	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement
+head-to-head	0.175862	-0.323730	-0.543238	worker,illegal,employer,company,immigrant,employee,work,raid,immigration,business	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.174762	0.342006	0.510989	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue	trump,would,immigrant,donald trump,campaign,clinton,immigration,people,undocumented,country
+friends	0.174291	0.315035	0.553242	one,day,like,two,home,time,back,work,house,food	family,child,year,mother,life,home,father,parent,wife,would
+head-to-head	0.170275	-0.410421	-0.414879	state,county,st. louis,city,year,area,office,service,former,new	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+friends	0.169885	0.293847	0.578140	immigrant,american,america,country,black,many,white,people,new,asian	war,military,israel,government,united state,iraq,country,year,american,army
+head-to-head	0.169656	-0.320877	-0.528726	obama,president,immigration,republican,congress,reform,white house,would,action,year	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+friends	0.168601	0.220241	0.765533	immigrant,community,help,language,english,service,people,center,program,many	family,child,year,mother,life,home,father,parent,wife,would
+head-to-head	0.168534	-0.376279	-0.447895	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+friends	0.164939	0.314713	0.524092	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+head-to-head	0.161588	-0.375692	-0.430107	visa,worker,job,year,foreign,company,american,program,business,work	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+head-to-head	0.161565	-0.237765	-0.679515	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+friends	0.161323	0.275049	0.586524	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act
+friends	0.159643	0.283786	0.562545	money,tax,million,year,business,company,cost,pay,billion,would	visa,worker,job,year,foreign,company,american,program,business,work
+head-to-head	0.155663	-0.252778	-0.615809	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+head-to-head	0.154987	-0.250314	-0.619173	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+friends	0.154217	0.231665	0.665690	police,two,officer,man,authority,found,killed,death,one,official	health,woman,hospital,medical,care,doctor,patient,health care,center,aid
+friends	0.153978	0.378798	0.406491	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure
+friends	0.141025	0.384691	0.366592	worker,illegal,employer,company,immigrant,employee,work,raid,immigration,business	worker,job,labor,work,farm,wage,employer,program,american,pay
+friends	0.140215	0.214615	0.653334	police,two,officer,man,authority,found,killed,death,one,official	one,day,like,two,home,time,back,work,house,food
+friends	0.139415	0.219868	0.634084	county,immigrant,illegal,city,local,resident,community,virginia,would,official	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement
+friends	0.139268	0.246572	0.564819	war,military,israel,government,united state,iraq,country,year,american,army	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+friends	0.139220	0.307718	0.452426	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+friends	0.139114	0.366960	0.379100	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	obama,president,immigration,republican,congress,reform,white house,would,action,year
+friends	0.137988	0.269007	0.512954	police,two,officer,man,authority,found,killed,death,one,official	state,county,st. louis,city,year,area,office,service,former,new
+friends	0.137415	0.181367	0.757663	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.136468	0.468870	0.291058	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	florida,miami,elian,boy,palm beach,father,would,cuba,gonzalez,official
+friends	0.135755	0.222600	0.609862	war,military,israel,government,united state,iraq,country,year,american,army	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.135160	0.212577	0.635814	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate	immigrant,colorado,denver,people,rally,protest,march,immigration,tancredo,day
+friends	0.134907	0.280985	0.480121	immigrant,american,america,country,black,many,white,people,new,asian	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan
+friends	0.133631	0.209151	0.638921	immigrant,state,license,card,driver license,illegal,document,would,social security,get	county,immigrant,illegal,city,local,resident,community,virginia,would,official
+tryst	-0.132851	0.299813	-0.443112	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+friends	0.132774	0.340747	0.389655	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	terrorist,muslim,government,visa,official,terrorism,country,security,immigration,attack
+arms-race	-0.126173	-0.274736	0.459252	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign
+arms-race	-0.107800	-0.278154	0.387554	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+arms-race	-0.105725	-0.210081	0.503262	county,immigrant,illegal,city,local,resident,community,virginia,would,official	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+tryst	-0.100702	0.336600	-0.299173	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+tryst	-0.086885	0.172511	-0.503647	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+arms-race	-0.085481	-0.207135	0.412681	worker,job,labor,work,farm,wage,employer,program,american,pay	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+arms-race	-0.084069	-0.199509	0.421379	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service	one,day,like,two,home,time,back,work,house,food
+arms-race	-0.082549	-0.190611	0.433076	money,tax,million,year,business,company,cost,pay,billion,would	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program
+arms-race	-0.079281	-0.254733	0.311233	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	story,book,show,art,time,film,team,first,new,elli island
+tryst	-0.079220	0.125285	-0.632318	immigration,alien,law,illegal,united state,would,legal,congress,year,country	american,immigrant,immigration,country,illegal,law,people,citizen,right,need
+arms-race	-0.071294	-0.182773	0.390070	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	county,immigrant,illegal,city,local,resident,community,virginia,would,official
+arms-race	-0.071284	-0.198700	0.358751	immigration,alien,law,illegal,united state,would,legal,congress,year,country	state,county,st. louis,city,year,area,office,service,former,new
+arms-race	-0.070494	-0.134462	0.524262	immigration,alien,law,illegal,united state,would,legal,congress,year,country	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan
+arms-race	-0.068864	-0.224497	0.306749	war,military,israel,government,united state,iraq,country,year,american,army	worker,job,labor,work,farm,wage,employer,program,american,pay
+arms-race	-0.067853	-0.160478	0.422820	immigrant,percent,number,population,immigration,study,year,report,people,million	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign
+arms-race	-0.067182	-0.314473	0.213635	immigrant,american,america,country,black,many,white,people,new,asian	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+tryst	-0.064934	0.236547	-0.274507	money,tax,million,year,business,company,cost,pay,billion,would	worker,job,labor,work,farm,wage,employer,program,american,pay
+tryst	-0.064737	0.121755	-0.531700	immigrant,colorado,denver,people,rally,protest,march,immigration,tancredo,day	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+arms-race	-0.063086	-0.256864	0.245602	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+arms-race	-0.061815	-0.169724	0.364207	immigrant,percent,number,population,immigration,study,year,report,people,million	immigrant,colorado,denver,people,rally,protest,march,immigration,tancredo,day
+arms-race	-0.059224	-0.100334	0.590272	immigration,alien,law,illegal,united state,would,legal,congress,year,country	war,military,israel,government,united state,iraq,country,year,american,army
+arms-race	-0.057172	-0.192230	0.297416	police,two,officer,man,authority,found,killed,death,one,official	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service
+arms-race	-0.057037	-0.230288	0.247675	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	worker,job,labor,work,farm,wage,employer,program,american,pay
+arms-race	-0.056490	-0.156557	0.360828	immigrant,percent,number,population,immigration,study,year,report,people,million	story,book,show,art,time,film,team,first,new,elli island
+tryst	-0.055567	0.103602	-0.536347	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign	mr.,ms.,would,united state,official,american,like,one,today,new york
+arms-race	-0.054875	-0.151687	0.361767	immigrant,percent,number,population,immigration,study,year,report,people,million	obama,president,immigration,republican,congress,reform,white house,would,action,year
+arms-race	-0.054059	-0.256674	0.210614	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	terrorist,muslim,government,visa,official,terrorism,country,security,immigration,attack
+arms-race	-0.053620	-0.207960	0.257838	immigrant,american,america,country,black,many,white,people,new,asian	worker,illegal,employer,company,immigrant,employee,work,raid,immigration,business
+tryst	-0.052658	0.173861	-0.302875	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	agency,official,immigration,department,report,service,would,office,new,system
+tryst	-0.051617	0.077497	-0.666056	immigration,alien,law,illegal,united state,would,legal,congress,year,country	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+arms-race	-0.050396	-0.153498	0.328317	school,student,child,education,teacher,class,parent,district,year,high school	mexico,mexican,united state,bush,president,fox,country,border,american,official
+tryst	-0.049471	0.140314	-0.352571	court,law,federal,judge,case,ruling,decision,supreme court,appeal,government	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service
+tryst	-0.049254	0.104589	-0.470933	immigration,alien,law,illegal,united state,would,legal,congress,year,country	immigrant,state,license,card,driver license,illegal,document,would,social security,get
+arms-race	-0.048954	-0.098595	0.496515	money,tax,million,year,business,company,cost,pay,billion,would	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate
+arms-race	-0.047793	-0.348133	0.137285	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	visa,worker,job,year,foreign,company,american,program,business,work
+tryst	-0.046922	0.257535	-0.182198	story,book,show,art,time,film,team,first,new,elli island	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+arms-race	-0.046144	-0.289606	0.159334	county,immigrant,illegal,city,local,resident,community,virginia,would,official	obama,president,immigration,republican,congress,reform,white house,would,action,year
+tryst	-0.046049	0.134586	-0.342151	worker,job,labor,work,farm,wage,employer,program,american,pay	american,immigrant,immigration,country,illegal,law,people,citizen,right,need
+arms-race	-0.045510	-0.301457	0.150966	school,student,child,education,teacher,class,parent,district,year,high school	border,border patrol,agent,illegal,year,crossing,mexico,along,mexican,migrant
+arms-race	-0.045320	-0.135893	0.333496	country,united state,canada,airport,official,immigration,canadian,visa,year,germany	worker,job,labor,work,farm,wage,employer,program,american,pay
+tryst	-0.044477	0.162737	-0.273305	family,child,year,mother,life,home,father,parent,wife,would	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+arms-race	-0.043962	-0.119702	0.367263	school,student,child,education,teacher,class,parent,district,year,high school	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+arms-race	-0.042957	-0.085833	0.500477	police,two,officer,man,authority,found,killed,death,one,official	immigrant,community,help,language,english,service,people,center,program,many
+tryst	-0.042869	0.223071	-0.192176	war,military,israel,government,united state,iraq,country,year,american,army	family,child,year,mother,life,home,father,parent,wife,would
+arms-race	-0.042565	-0.199236	0.213640	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two	worker,job,labor,work,farm,wage,employer,program,american,pay
+arms-race	-0.042452	-0.156549	0.271172	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	war,military,israel,government,united state,iraq,country,year,american,army
+tryst	-0.042403	0.350805	-0.120874	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+tryst	-0.042071	0.094142	-0.446894	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+arms-race	-0.041921	-0.184931	0.226686	visa,worker,job,year,foreign,company,american,program,business,work	county,immigrant,illegal,city,local,resident,community,virginia,would,official
+arms-race	-0.041187	-0.188585	0.218398	visa,worker,job,year,foreign,company,american,program,business,work	immigrant,colorado,denver,people,rally,protest,march,immigration,tancredo,day
+arms-race	-0.039468	-0.062122	0.635331	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act
+arms-race	-0.039458	-0.092172	0.428087	immigrant,state,license,card,driver license,illegal,document,would,social security,get	family,child,year,mother,life,home,father,parent,wife,would
+arms-race	-0.038694	-0.445573	0.086842	worker,job,labor,work,farm,wage,employer,program,american,pay	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+arms-race	-0.038690	-0.151385	0.255574	agency,official,immigration,department,report,service,would,office,new,system	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan
+tryst	-0.038469	0.285746	-0.134627	visa,worker,job,year,foreign,company,american,program,business,work	worker,job,labor,work,farm,wage,employer,program,american,pay
+tryst	-0.038448	0.125361	-0.306702	money,tax,million,year,business,company,cost,pay,billion,would	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+tryst	-0.038408	0.100368	-0.382671	one,day,like,two,home,time,back,work,house,food	mr.,ms.,would,united state,official,american,like,one,today,new york
+arms-race	-0.038057	-0.139276	0.273247	immigrant,community,help,language,english,service,people,center,program,many	terrorist,muslim,government,visa,official,terrorism,country,security,immigration,attack
+tryst	-0.036387	0.063113	-0.576531	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	immigration,alien,law,illegal,united state,would,legal,congress,year,country
+arms-race	-0.036149	-0.086865	0.416153	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	state,county,st. louis,city,year,area,office,service,former,new
+tryst	-0.036123	0.082362	-0.438593	refugee,haitian,cuban,united state,cuba,policy,official,haiti,people,government	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state
+tryst	-0.036099	0.082075	-0.439835	county,immigrant,illegal,city,local,resident,community,virginia,would,official	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+tryst	-0.036024	0.078076	-0.461396	immigration,alien,law,illegal,united state,would,legal,congress,year,country	visa,worker,job,year,foreign,company,american,program,business,work
+tryst	-0.035955	0.081865	-0.439194	war,military,israel,government,united state,iraq,country,year,american,army	american,immigrant,immigration,country,illegal,law,people,citizen,right,need
+arms-race	-0.034735	-0.077337	0.449141	money,tax,million,year,business,company,cost,pay,billion,would	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+arms-race	-0.034601	-0.077555	0.446152	state,county,st. louis,city,year,area,office,service,former,new	immigration,case,judge,asylum,lawyer,deportation,court,hearing,appeal,year
+arms-race	-0.034355	-0.294514	0.116651	worker,illegal,employer,company,immigrant,employee,work,raid,immigration,business	war,military,israel,government,united state,iraq,country,year,american,army
+arms-race	-0.033206	-0.163970	0.202512	immigrant,state,license,card,driver license,illegal,document,would,social security,get	republican,immigration,bush,rubio,president,conservative,issue,romney,candidate,campaign
+arms-race	-0.032701	-0.287798	0.113626	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	agency,official,immigration,department,report,service,would,office,new,system
+arms-race	-0.032690	-0.357779	0.091369	immigrant,american,america,country,black,many,white,people,new,asian	charge,federal,case,attorney,prosecutor,charged,court,immigration,arrested,two
+tryst	-0.032506	0.097925	-0.331945	immigrant,american,america,country,black,many,white,people,new,asian	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate
+arms-race	-0.032465	-0.083770	0.387546	immigration,alien,law,illegal,united state,would,legal,congress,year,country	chinese,immigrant,china,official,ship,boat,smuggling,smuggler,united state,people
+arms-race	-0.032332	-0.097389	0.331983	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state	people,say,get,think,one,like,want,know,going,would
+tryst	-0.032166	0.248399	-0.129492	worker,job,labor,work,farm,wage,employer,program,american,pay	immigrant,immigration,illegal,would,reform,border,country,million,undocumented,bush
+arms-race	-0.031113	-0.120619	0.257942	story,book,show,art,time,film,team,first,new,elli island	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement
+tryst	-0.030906	0.061223	-0.504815	mr.,ms.,would,united state,official,american,like,one,today,new york	family,child,year,mother,life,home,father,parent,wife,would
+arms-race	-0.030749	-0.211862	0.145138	visa,worker,job,year,foreign,company,american,program,business,work	law,state,immigration,georgia,arizona,illegal,federal,immigrant,atlanta,enforcement
+tryst	-0.030546	0.106247	-0.287499	immigrant,american,america,country,black,many,white,people,new,asian	republican,percent,vote,voter,party,hispanic,election,democrat,latino,issue
+tryst	-0.029280	0.100464	-0.291443	money,tax,million,year,business,company,cost,pay,billion,would	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan
+tryst	-0.029104	0.082544	-0.352585	immigrant,mexico,mexican,people,united state,migrant,salvador,illegal,salvadoran,many	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state
+tryst	-0.028270	0.072946	-0.387550	city,new york,immigrant,queen,brooklyn,new,many,community,neighborhood,manhattan	county,immigrant,illegal,city,local,resident,community,virginia,would,official
+tryst	-0.028160	0.234936	-0.119864	immigrant,american,america,country,black,many,white,people,new,asian	family,child,year,mother,life,home,father,parent,wife,would
+tryst	-0.027756	0.108891	-0.254901	money,tax,million,year,business,company,cost,pay,billion,would	war,military,israel,government,united state,iraq,country,year,american,army
+tryst	-0.027590	0.299224	-0.092206	story,book,show,art,time,film,team,first,new,elli island	state,county,st. louis,city,year,area,office,service,former,new
+tryst	-0.025779	0.113927	-0.226280	school,student,child,education,teacher,class,parent,district,year,high school	war,military,israel,government,united state,iraq,country,year,american,army
+tryst	-0.024725	0.171219	-0.144406	immigration,immigrant,ice,deportation,federal,criminal,enforcement,law,crime,program	border,border patrol,agent,illegal,year,crossing,mexico,along,mexican,migrant
+tryst	-0.024111	0.101424	-0.237723	one,day,like,two,home,time,back,work,house,food	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+tryst	-0.022300	0.048110	-0.463531	bill,senate,house,would,republican,legislation,democrat,vote,immigration,measure	agency,official,immigration,department,report,service,would,office,new,system
+tryst	-0.021268	0.109918	-0.193487	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act
+tryst	-0.019893	0.037643	-0.528471	immigration,alien,law,illegal,united state,would,legal,congress,year,country	immigrant,percent,number,population,immigration,study,year,report,people,million
+tryst	-0.019258	0.168092	-0.114566	visa,worker,job,year,foreign,company,american,program,business,work	country,united state,canada,airport,official,immigration,canadian,visa,year,germany
+tryst	-0.019111	0.096062	-0.198945	immigrant,state,illegal,california,federal,benefit,would,legal,welfare,service	worker,job,labor,work,farm,wage,employer,program,american,pay
+tryst	-0.018605	0.056001	-0.332225	health,woman,hospital,medical,care,doctor,patient,health care,center,aid	child,immigrant,deportation,country,family,program,parent,immigration,undocumented,united state
+tryst	-0.018525	0.071654	-0.258527	immigration,one,policy,even,would,may,political,problem,many,way	war,military,israel,government,united state,iraq,country,year,american,army
+tryst	-0.018046	0.119996	-0.150390	immigrant,community,help,language,english,service,people,center,program,many	student,college,state,immigrant,university,undocumented,high school,illegal,year,dream act
+tryst	-0.016758	0.090776	-0.184608	money,tax,million,year,business,company,cost,pay,billion,would	agency,official,immigration,department,report,service,would,office,new,system
+tryst	-0.015974	0.023111	-0.691169	group,immigration,immigrant,member,national,issue,community,leader,latino,advocate	detainee,church,detention,prison,immigration,jail,detention center,center,facility,held
+tryst	-0.015599	0.037331	-0.417856	immigrant,american,america,country,black,many,white,people,new,asian	immigrant,colorado,denver,people,rally,protest,march,immigration,tancredo,day
+tryst	-0.015527	0.078565	-0.197627	immigrant,american,america,country,black,many,white,people,new,asian	people,say,get,think,one,like,want,know,going,would

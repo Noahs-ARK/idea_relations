@@ -33,4 +33,5 @@ If `keywords` is used to represent ideas, `background_file` is required to learn
 
 All packages in requirements.txt are necessary. 
 Run `pip install -r requirements.txt` to install them.
+TeX installations is also required to compile the tex files (it is also necessary for the matplotlib backend configuration).
 
