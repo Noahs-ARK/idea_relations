@@ -6,12 +6,12 @@ from nltk.corpus import stopwords
 import utils
 
 LEMMATIZER = WordNetLemmatizer()
+STOPWORDS = set(stopwords.words('english'))
 
 def tokenize(text, filter_stopwords=False, lowercase=True):
     words = word_tokenize(text)
     if filter_stopwords:
-        stopwords = set(stopwords.words('english'))
-        words = [w for w in words if w not in stopwords]
+        words = [w for w in words if w not in STOPWORDS]
     return words
 
 
