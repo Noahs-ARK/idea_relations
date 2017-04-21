@@ -11,6 +11,11 @@ import collections
 import itertools
 import numpy as np
 import scipy.stats as ss
+from distutils.spawn import find_executable
+if find_executable('latex'):
+    HAS_LATEX = True
+else:
+    HAS_LATEX = False
 import matplotlib
 if "DISPLAY" not in os.environ:
     matplotlib.use("Agg")
@@ -21,14 +26,14 @@ import matplotlib.dates as mdates
 from pandas import DataFrame
 
 LINEWIDTH = 5
-sns.set(font_scale=3.0, rc={
+FONT_ENV = {
     "lines.linewidth": LINEWIDTH,
     "lines.markersize":20,
-    "ps.useafm": True,
-    "font.sans-serif": ["Helvetica"],
-    "pdf.use14corefonts" : True,
-    "text.usetex": True,
-    })
+    "ps.useafm": HAS_LATEX,
+    "pdf.use14corefonts" : HAS_LATEX,
+    "text.usetex": HAS_LATEX,
+}
+sns.set(font_scale=3.0, rc=FONT_ENV)
 FIG_SIZE = (8, 7)
 logging.basicConfig(level=logging.INFO)
 COLOR_NAMES = ["cerulean", "light red", "seafoam", "dark orange",

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-#TODO: add license description
-
 import os
 import sys
 import functools
@@ -38,6 +36,10 @@ parser.add_argument("--mallet_bin_dir",
 parser.add_argument("--background_file",
                     help=("background file to learn important keywords"),
                     type=str)
+parser.add_argument("--group_by",
+                    help=("binning option for timesteps, supports year, quarter, and month"),
+                    type=str,
+                    default="year")
 parser.add_argument("--prefix",
                     help=("name for the exploration"),
                     type=str,
@@ -63,6 +65,10 @@ def main():
     input_file = os.path.abspath(args.input_file)
     data_output_dir = os.path.abspath(args.data_output_dir)
     final_output_dir = os.path.abspath(args.final_output_dir)
+    if not os.path.exists(data_output_dir):
+        os.makedirs(data_output_dir)
+    if not os.path.exists(final_output_dir):
+        os.makedirs(final_output_dir)
     # Support some standard preprocessing
     if args.tokenize:
         # tokenize input_file to token_file
@@ -122,7 +128,8 @@ def main():
 
     # compute strength between pairs and generate outputs
     il.generate_all_outputs(articles, num_ideas, idea_names, prefix,
-                           final_output_dir, cooccur_func, table_top=table_top)
+                            final_output_dir, cooccur_func,
+                            table_top=table_top, group_by=group_by)
 
 
 if __name__ == "__main__":

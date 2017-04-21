@@ -7,6 +7,11 @@ import json
 import itertools
 import numpy as np
 import scipy.stats as ss
+from distutils.spawn import find_executable
+if find_executable('latex'):
+    HAS_LATEX = True
+else:
+    HAS_LATEX = False
 try:
     from diptest import diptest
     unimodality_test = True
@@ -61,7 +66,7 @@ def get_count_cooccur(articles, func=generate_cooccurrence_from_int_set):
             "articles": len(articles)}
 
 
-def get_time_grouped_articles(articles, group_by="month", start_time=1980,
+def get_time_grouped_articles(articles, group_by="year", start_time=1980,
         end_time=2016):
     articles_group = collections.defaultdict(list)
     for article in articles:
@@ -306,16 +311,20 @@ def plot_average_top_strength(strength_file, prefix, output_dir, top=25):
 
 
 def generate_all_outputs(articles, num_ideas, idea_names, prefix,
-                         output_dir, cooccur_func, table_top=5):
+                         output_dir, cooccur_func, table_top=5,
+                         group_by="year"):
     figure_dir = "%s/figure" % output_dir
     table_dir = "%s/table" % output_dir
     if not os.path.exists(figure_dir) or not os.path.exists(table_dir):
         os.makedirs(figure_dir)
         os.makedirs(table_dir)
     info = {}
-    pmi, ts_corr, joint_file = generate_scatter_dist_plot(articles, num_ideas,
-                                              figure_dir, prefix,
-                                              cooccur_func=cooccur_func)
+    pmi, ts_corr, joint_file = generate_scatter_dist_plot(
+        articles, num_ideas,
+        figure_dir, prefix,
+        cooccur_func=cooccur_func,
+        group_by=group_by
+    )
     info["joint_file"] = joint_file
     strength_file = "%s/%s_comb_extreme_pairs.txt" % (figure_dir, prefix)
     get_combined_extreme_pairs(pmi, ts_corr, idea_names, strength_file,
@@ -331,7 +340,7 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
                                   strength_file, figure_dir,
                                   top=5,
                                   cooccur_func=cooccur_func,
-                                  group_by="year")
+                                  group_by=group_by)
     for k in filename_map:
         info[k] = filename_map[k]
 
@@ -352,8 +361,9 @@ def generate_all_outputs(articles, num_ideas, idea_names, prefix,
             info[k] = "{%s}" % (info[k])
     tex_file = "%s/%s_main.tex" % (output_dir, prefix)
     to.write_tex_file(tex_file, info)
-    cwd = os.getcwd()
-    os.chdir(output_dir)
-    os.system("%s/mklatex.sh %s" % (cwd, tex_file))
-    os.chdir(cwd)
+    if HAS_LATEX:
+        cwd = os.getcwd()
+        os.chdir(output_dir)
+        os.system("%s/mklatex.sh %s" % (cwd, tex_file))
+        os.chdir(cwd)
 

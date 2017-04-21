@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from nltk.tokenize import word_tokenize
+"""
+Use NLTK for preprocessing.
+Feel free to switch to spacy.
+"""
+
+from nltk.tokenize import wordpunct_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import utils
@@ -9,7 +14,7 @@ LEMMATIZER = WordNetLemmatizer()
 STOPWORDS = set(stopwords.words('english'))
 
 def tokenize(text, filter_stopwords=False, lowercase=True):
-    words = word_tokenize(text)
+    words = wordpunct_tokenize(text)
     if filter_stopwords:
         words = [w for w in words if w not in STOPWORDS]
     return words
