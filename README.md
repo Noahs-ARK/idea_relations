@@ -1,17 +1,25 @@
 # Relations between ideas
 
 This project provides a framework to identify relations between ideas in temporal text corpora.
-(copy some intro content here)
+Because ideas are naturally embedded in texts, we propose a framework to systematically characterize the relations between ideas based on their occurrence by combining two statistics: cooccurrence within documents and prevalence correlation over time.
+This framework reveals four possible relations between ideas:
+* friendship: two ideas tend to cooccur, and are correlated in prevalence;
+* head-to-head: two ideas rarely cooccur, and are anti-correlated in prevalence;
+* tryst: two ideas tend to cooccur, but are anti-correlated in prevalence;
+* arms-race: two ideas rarely cooccurr, but are correlated in prevalence.
 
-### Main idea
-The main idea of this framework is to combine cooccurrence within documents and prevalence correlation over time.
+![Example images.](./examples.png)
 
-Refer to this writeup for our initial exploration using this framework on news issues and research papers
+Refer to [our paper](https://chenhaot.com/pages/idea_relations.html) for our initial exploration using this framework on news issues and research papers.
+
+This framework is independent of how we represent ideas. In this repository, we showcase our framework by using topics from Latent Dirichlet Allocation (Blei et al. 2003) and keywords identified using Fightin' words (Monroe et al. 2008).
+
 
 ### Usage
 
 ```
 python main.py [--option {topics,keywords}] [--input_file INPUT_FILE] \
+               [--group_by {year, month, quarter}] \
                [--data_output_dir DATA_OUTPUT_DIR] \
                [--final_output_dir FINAL_OUTPUT_DIR] \
                [--mallet_bin_dir MALLET_BIN_DIR] \
@@ -22,7 +30,9 @@ python main.py [--option {topics,keywords}] [--input_file INPUT_FILE] \
 
 `input_file` is a data file, where each line corresponds to a document and is a json object with two fields (`text` for the content; `date` for the timestamp, e.g., 20000101).
 
-In the `final_output_dir`, there will two sub directories, figure/ and table/ and also a tex file that is compiled to generate a report pdf file.
+In the `final_output_dir`, there will two sub directories, `figure/` and `table/` and also a tex file (e.g., immigration\_topics\_main.tex) that can be compiled to generate a report pdf file.
+The outputs in `figure/` include relative frequency over time for pairs of ideas with the strongest relation in four types of relation above, and a file `*_comb_extreme_pairs.txt` with sorted pairs of relations with their relation type, cooccurrence, prevalence correlation, and strength.
+The outputs in `table/` are necessary for the compilation of the main tex file.
 
 If `topics` is used to represent ideas, [Mallet](http://mallet.cs.umass.edu/) is required to generate topics for each document (`mallet_bin_dir` is required).
 Alternatively, it works as long as there are mallet style topic files in `data_outpu_dir`.
@@ -31,7 +41,11 @@ If `keywords` is used to represent ideas, `background_file` is required to learn
 
 `tokenize`, `lemmatize` and `nostopwords` are preprocessing options that we currently support.
 
-All packages in requirements.txt are necessary. 
-Run `pip install -r requirements.txt` to install them.
-TeX installations is also required to compile the tex files (it is also necessary for the matplotlib backend configuration).
+We list all packages used in requirements.txt. 
+One way to install these packages is to run `pip install -r requirements.txt`;
+alternatively, one can use `conda create --name idea_relations --file requirements.txt` to create a new environment for running this package.
+Our output can be an automatically compiled pdf file if we can find TeX installations.
+
+
+If you have any questions regarding the framework or usage of this repository, please direct your questions to [Chenhao Tan](https://chenhaot.com) and [Dallas Card](http://www.cs.cmu.edu/~dcard/).
 
