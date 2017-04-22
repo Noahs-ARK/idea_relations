@@ -2,7 +2,7 @@
 
 This project provides a framework to identify relations between ideas in temporal text corpora.
 Because ideas are naturally embedded in texts, we propose a framework to systematically characterize the relations between ideas based on their occurrence by combining two statistics: cooccurrence within documents and prevalence correlation over time.
-This framework reveals four possible relations between ideas:
+This framework reveals four possible relations between ideas as shown in the following quadrants:
 * friendship: two ideas tend to cooccur, and are correlated in prevalence;
 * head-to-head: two ideas rarely cooccur, and are anti-correlated in prevalence;
 * tryst: two ideas tend to cooccur, but are anti-correlated in prevalence;
@@ -37,14 +37,16 @@ The outputs in `table/` are necessary for the compilation of the main tex file.
 If `topics` is used to represent ideas, [Mallet](http://mallet.cs.umass.edu/) is required to generate topics for each document (`mallet_bin_dir` is required).
 Alternatively, it works as long as there are mallet style topic files in `data_outpu_dir`.
 
-If `keywords` is used to represent ideas, `background_file` is required to learn `num_ideas` as representations.
+If `keywords` is used to represent ideas, `background_file` is required to learn `num_ideas` keywords as representations.
 
 `tokenize`, `lemmatize` and `nostopwords` are preprocessing options that we currently support.
+
+`example.sh` gives example commands of using our framework. You can also download example datasets from ACL and NIPS [here](https://chenhaot.com/pages/idea_relations.html).
 
 We list all packages used in requirements.txt. 
 One way to install these packages is to run `pip install -r requirements.txt`;
 alternatively, one can use `conda create --name idea_relations --file requirements.txt` to create a new environment for running this package.
-Our output can be an automatically compiled pdf file if we can find TeX installations.
+Our output can be an automatically compiled pdf file if there exist TeX installations.
 
 
 If you have any questions regarding the framework or usage of this repository, please direct your questions to [Chenhao Tan](https://chenhaot.com) and [Dallas Card](http://www.cs.cmu.edu/~dcard/).
