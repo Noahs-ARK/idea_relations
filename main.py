@@ -95,12 +95,14 @@ def main():
     if option == "topics":
         logging.info("using topics to represent ideas")
         prefix = "%s_topics" % prefix
-        # generate mallet topics
+        # generate mallet topics        
         mt.get_mallet_input_from_words(input_file, data_output_dir)
         if not mt.check_mallet_directory(data_output_dir):
             # run mallet to prepare topics inputs
             # users can also generate mallet-style topic inputs inputs
             logging.info("running mallet to get topics")
+            if not os.path.exists(os.path.join(args.mallet_bin_dir, 'mallet')):
+                sys.exit("Error: Unable to find mallet at %s" % args.mallet_bin_dir)
             os.system("./mallet.sh %s %s %d" % (args.mallet_bin_dir,
                                                 data_output_dir,
                                                 num_ideas))
