@@ -10,7 +10,7 @@ This framework reveals four possible relations between ideas as shown in the fol
 
 ![Example images.](./examples.png)
 
-Refer to [our paper](https://chenhaot.com/pages/idea_relations.html) for our initial exploration using this framework on news issues and research papers.
+Refer to [our paper](https://chenhaot.com/pages/idea-relations.html) for our initial exploration using this framework on news issues and research papers.
 
 This framework is independent of how we represent ideas. In this repository, we showcase our framework by using topics from Latent Dirichlet Allocation (Blei et al. 2003) and keywords identified using Fightin' words (Monroe et al. 2008).
 
@@ -41,7 +41,7 @@ If `keywords` is used to represent ideas, `background_file` is required to learn
 
 `tokenize`, `lemmatize` and `nostopwords` are preprocessing options that we currently support.
 
-`example.sh` gives example commands for using our framework. You can also download example datasets from ACL and NIPS [here](https://chenhaot.com/pages/idea_relations.html).
+`example.sh` gives example commands for using our framework. You can also download example datasets from ACL and NIPS [here](https://chenhaot.com/pages/idea-relations.html).
 
 We list all packages used in requirements.txt. 
 One way to install these packages is to run `pip install -r requirements.txt`;
