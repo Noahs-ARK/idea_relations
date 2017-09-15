@@ -14,6 +14,7 @@ Refer to [our paper](https://chenhaot.com/pages/idea-relations.html) for our ini
 
 This framework is independent of how we represent ideas. In this repository, we showcase our framework by using topics from Latent Dirichlet Allocation (Blei et al. 2003) and keywords identified using Fightin' words (Monroe et al. 2008).
 
+We also have visualization tool available at <https://github.com/nwrush/Visualization>.
 
 ### Usage
 
