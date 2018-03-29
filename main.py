@@ -76,7 +76,7 @@ def main():
         token_file = "%s/tokens.jsonlist.gz" % data_output_dir
         func = functools.partial(preprocessing.tokenize,
                                  filter_stopwords=args.nostopwords)
-        preprocessing.preprocess_input(input_file, token_file)
+        preprocessing.preprocess_input(input_file, token_file, func=func)
         input_file = token_file
     if args.lemmatize:
         # lemmatize input_file to lemma_file
@@ -84,7 +84,7 @@ def main():
         lemma_file = "%s/lemmas.jsonlist.gz" % data_output_dir
         func = functools.partial(preprocessing.lemmatize,
                                  filter_stopwords=args.nostopwords)
-        preprocessing.preprocess_input(input_file, lemma_file)
+        preprocessing.preprocess_input(input_file, lemma_file, func=func)
         input_file = lemma_file
     # generate topics or lexicons
     option = args.option
