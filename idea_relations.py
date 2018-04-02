@@ -96,6 +96,8 @@ def get_ts_correlation(info_dict, num_ideas, normalize=False):
     for i in range(num_ideas):
         for j in range(i + 1, num_ideas):
             score, _ = ss.pearsonr(ts_matrix[i, :], ts_matrix[j, :])
+            if np.isnan(score):
+                score = 0
             correlation_matrix[i, j] = score
             correlation_matrix[j, i] = score
     return correlation_matrix
@@ -214,13 +216,15 @@ def plot_top_pairs(articles, idea_names, prefix, num_ideas,
                 parts[4], parts[5]))
     xvalues = range(ts_matrix.shape[1])
     filename_map = {}
+    xticklabels = list(articles_group.keys())
+    xticklabels.sort()
     for category in ["friends", "arms-race", "head-to-head", "tryst"]:
         for rank, t in enumerate(type_list[category][:top]):
             pmi, fst, snd = t
             fig, filename = plot_pair(ts_matrix, idea_names, fst, snd,
                                       category, prefix, output_dir,
                                       save_file=True, 
-                                      xticklabels=articles_group.keys(),
+                                      xticklabels=xticklabels,
                                       step=5,
                                       ylabel="frequency",
                                       xlabel="time periods",
